@@ -157,6 +157,12 @@ dependencies {
     // JSON
     implementation "com.google.code.gson:gson:${gson_version}"
 
+    // Citadel
+    implementation fg.deobf("curse.maven:citadel-331936:4556677")
+
+    // Ice and Fire
+    implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5037952")
+
     // Mixins
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 }
