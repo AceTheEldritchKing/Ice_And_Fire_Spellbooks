@@ -185,6 +185,11 @@
 					]
 				},
 				{
+					"name": "armorLeggingTorsoLayer",
+					"parent": "bipedBody",
+					"pivot": [0, 24, 0]
+				},
+				{
 					"name": "bipedLeftArm",
 					"pivot": [-4, 22, 0]
 				},
