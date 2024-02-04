@@ -1,6 +1,7 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks;
 
 import com.mojang.logging.LogUtils;
+import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ItemRegistries;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
@@ -25,6 +26,9 @@ public class IceAndFireSpellbooks
     public IceAndFireSpellbooks()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        // Items
+        ItemRegistries.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
