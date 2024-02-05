@@ -5,5 +5,15 @@
     "item.ice_and_fire_spellbooks.fire_dragon_priest_helmet": "Fire Dragon Priest Helmet",
     "item.ice_and_fire_spellbooks.fire_dragon_priest_chestplate": "Fire Dragon Priest Robes",
     "item.ice_and_fire_spellbooks.fire_dragon_priest_leggings": "Fire Dragon Priest Pants",
-    "item.ice_and_fire_spellbooks.fire_dragon_priest_boots": "Fire Dragon Priest Boots"
+    "item.ice_and_fire_spellbooks.fire_dragon_priest_boots": "Fire Dragon Priest Boots",
+
+    "item.ice_and_fire_spellbooks.ice_dragon_priest_helmet": "Ice Dragon Priest Helmet",
+    "item.ice_and_fire_spellbooks.ice_dragon_priest_chestplate": "Ice Dragon Priest Robes",
+    "item.ice_and_fire_spellbooks.ice_dragon_priest_leggings": "Ice Dragon Priest Pants",
+    "item.ice_and_fire_spellbooks.ice_dragon_priest_boots": "Ice Dragon Priest Boots",
+
+    "item.ice_and_fire_spellbooks.lightning_dragon_priest_helmet": "Lightning Dragon Priest Helmet",
+    "item.ice_and_fire_spellbooks.lightning_dragon_priest_chestplate": "Lightning Dragon Priest Robes",
+    "item.ice_and_fire_spellbooks.lightning_dragon_priest_leggings": "Lightning Dragon Priest Pants",
+    "item.ice_and_fire_spellbooks.lightning_dragon_priest_boots": "Lightning Dragon Priest Boots"
 }

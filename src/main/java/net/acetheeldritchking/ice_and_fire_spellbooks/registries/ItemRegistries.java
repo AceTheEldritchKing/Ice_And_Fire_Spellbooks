@@ -9,6 +9,8 @@ import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.DragonPriestStaffItem;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.FireDragonPriestArmorItem;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.IceDragonPriestArmorItem;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.LightningDragonPriestArmorItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.item.Item;
@@ -44,10 +46,30 @@ public class ItemRegistries {
             () -> new FireDragonPriestArmorItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment()));
     public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_CHESTPLATE = ITEMS.register("fire_dragon_priest_chestplate",
             () -> new FireDragonPriestArmorItem(EquipmentSlot.CHEST, ItemPropertiesHelper.equipment()));
-    public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_LEGGINGS = ITEMS.register("fire_dragon_priest_leggigns",
+    public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_LEGGINGS = ITEMS.register("fire_dragon_priest_leggings",
             () -> new FireDragonPriestArmorItem(EquipmentSlot.LEGS, ItemPropertiesHelper.equipment()));
     public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_BOOTS = ITEMS.register("fire_dragon_priest_boots",
             () -> new FireDragonPriestArmorItem(EquipmentSlot.FEET, ItemPropertiesHelper.equipment()));
+
+    // Ice Dragon Priest
+    public static final RegistryObject<Item> ICE_DRAGON_PRIEST_HELMET = ITEMS.register("ice_dragon_priest_helmet",
+            () -> new IceDragonPriestArmorItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment()));
+    public static final RegistryObject<Item> ICE_DRAGON_PRIEST_CHESTPLATE = ITEMS.register("ice_dragon_priest_chestplate",
+            () -> new IceDragonPriestArmorItem(EquipmentSlot.CHEST, ItemPropertiesHelper.equipment()));
+    public static final RegistryObject<Item> ICE_DRAGON_PRIEST_LEGGINGS = ITEMS.register("ice_dragon_priest_leggings",
+            () -> new IceDragonPriestArmorItem(EquipmentSlot.LEGS, ItemPropertiesHelper.equipment()));
+    public static final RegistryObject<Item> ICE_DRAGON_PRIEST_BOOTS = ITEMS.register("ice_dragon_priest_boots",
+            () -> new IceDragonPriestArmorItem(EquipmentSlot.FEET, ItemPropertiesHelper.equipment()));
+
+    // Lightning Dragon Priest
+    public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_HELMET = ITEMS.register("lightning_dragon_priest_helmet",
+            () -> new LightningDragonPriestArmorItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment()));
+    public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_CHESTPLATE = ITEMS.register("lightning_dragon_priest_chestplate",
+            () -> new LightningDragonPriestArmorItem(EquipmentSlot.CHEST, ItemPropertiesHelper.equipment()));
+    public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_LEGGINGS = ITEMS.register("lightning_dragon_priest_leggings",
+            () -> new LightningDragonPriestArmorItem(EquipmentSlot.LEGS, ItemPropertiesHelper.equipment()));
+    public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_BOOTS = ITEMS.register("lightning_dragon_priest_boots",
+            () -> new LightningDragonPriestArmorItem(EquipmentSlot.FEET, ItemPropertiesHelper.equipment()));
 
     public static void register(IEventBus eventBus)
     {

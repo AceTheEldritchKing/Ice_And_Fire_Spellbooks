@@ -3,7 +3,11 @@ package net.acetheeldritchking.ice_and_fire_spellbooks;
 import com.mojang.logging.LogUtils;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.FireDragonPriestArmorModel;
+import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.IceDragonPriestArmorModel;
+import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.LightningDragonPriestArmorModel;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.FireDragonPriestArmorItem;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.IceDragonPriestArmorItem;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.LightningDragonPriestArmorItem;
 import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ItemRegistries;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.level.block.Blocks;
@@ -54,6 +58,8 @@ public class IceAndFireSpellbooks
         public static void registerRenderers(final EntityRenderersEvent.AddLayers event)
         {
             GeoArmorRenderer.registerArmorRenderer(FireDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new FireDragonPriestArmorModel()));
+            GeoArmorRenderer.registerArmorRenderer(IceDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new IceDragonPriestArmorModel()));
+            GeoArmorRenderer.registerArmorRenderer(LightningDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new LightningDragonPriestArmorModel()));
         }
 
         @SubscribeEvent

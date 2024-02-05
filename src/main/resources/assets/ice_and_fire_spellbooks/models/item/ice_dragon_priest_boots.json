@@ -1,0 +1,6 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "ice_and_fire_spellbooks:item/ice_dragon_priest_boots"
+    }
+}
