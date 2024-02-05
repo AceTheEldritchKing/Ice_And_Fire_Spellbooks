@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "  d",
+        " w ",
+        "b"
+    ],
+    "key":
+    {
+        "d":
+        {
+            "tag": "ice_and_fire_spellbooks:dragonsteel"
+        },
+        "w":
+        {
+            "tag": "forge:bones/wither"
+        },
+        "b":
+        {
+            "item": "iceandfire:dragonbone"
+        }
+    },
+    "result": {
+        "item": "ice_and_fire_spellbooks:dragon_priest_staff",
+        "count": 1
+    }
+}

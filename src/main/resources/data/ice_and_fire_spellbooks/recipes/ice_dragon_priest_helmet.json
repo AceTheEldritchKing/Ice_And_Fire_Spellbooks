@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "drd",
+        "d d"
+    ],
+    "key": {
+        "d": {
+            "item": "iceandfire:dragonsteel_ice_ingot"
+        },
+        "r": {
+            "item": "irons_spellbooks:ice_rune"
+        }
+    },
+    "result": {
+        "item": "ice_and_fire_spellbooks:ice_dragon_priest_helmet",
+        "count": 1
+    }
+}

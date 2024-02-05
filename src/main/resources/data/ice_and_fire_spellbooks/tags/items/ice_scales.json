@@ -1,0 +1,21 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "required": false,
+            "id": "iceandfire:dragonscales_blue"
+        },
+		{
+            "required": false,
+            "id": "iceandfire:dragonscales_silver"
+        },
+		{
+            "required": false,
+            "id": "iceandfire:dragonscales_white"
+        },
+		{
+            "required": false,
+            "id": "iceandfire:dragonscales_sapphire"
+        }
+    ]
+}

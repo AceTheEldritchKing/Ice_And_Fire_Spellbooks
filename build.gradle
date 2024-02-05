@@ -163,6 +163,9 @@ dependencies {
     // Ice and Fire
     implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5037952")
 
+    // JEI
+    runtimeOnly(fg.deobf("curse.maven:Jei-238222:4712866"))
+
     // Mixins
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 }

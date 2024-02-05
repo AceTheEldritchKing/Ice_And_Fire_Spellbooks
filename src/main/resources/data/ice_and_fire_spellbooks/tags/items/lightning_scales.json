@@ -1,0 +1,21 @@
+{
+    "replace": false,
+    "values": [
+        {
+            "required": false,
+            "id": "iceandfire:dragonscales_black"
+        },
+		{
+            "required": false,
+            "id": "iceandfire:dragonscales_copper"
+        },
+		{
+            "required": false,
+            "id": "iceandfire:dragonscales_electric"
+        },
+		{
+            "required": false,
+            "id": "iceandfire:dragonscales_amythest"
+        }
+    ]
+}

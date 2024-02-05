@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "srs",
+        "d d",
+        "d d"
+    ],
+    "key": {
+        "d": {
+            "item": "iceandfire:dragonsteel_lightning_ingot"
+        },
+        "r": {
+            "item": "irons_spellbooks:lightning_rune"
+        },
+        "s": {
+            "tag": "ice_and_fire_spellbooks:lightning_scales"
+        }
+    },
+    "result": {
+        "item": "ice_and_fire_spellbooks:lightning_dragon_priest_leggings",
+        "count": 1
+    }
+}

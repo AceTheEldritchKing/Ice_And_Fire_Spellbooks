@@ -1,0 +1,31 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+      " d ",
+      "srs",
+      " m "
+    ],
+    "key": {
+        "d":
+        {
+            "tag": "ice_and_fire_spellbooks:dragon_steel"
+        },
+        "s":
+        {
+            "tag": "ice_and_fire_spellbooks:dragon_scales"
+        },
+        "r":
+        {
+            "item": "irons_spellbooks:ruined_book"
+        },
+        "m":
+        {
+            "item": "irons_spellbooks:magic_cloth"
+        }
+    },
+    "result": {
+        "item": "ice_and_fire_spellbooks:dragonmancers_oathbook",
+        "count": 1
+    }
+}

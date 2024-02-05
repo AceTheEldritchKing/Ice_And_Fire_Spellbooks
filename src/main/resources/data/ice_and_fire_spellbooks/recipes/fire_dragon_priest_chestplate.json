@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "d d",
+        "drd",
+        "sds"
+    ],
+    "key": {
+        "d": {
+            "item": "iceandfire:dragonsteel_fire_ingot"
+        },
+        "r": {
+            "item": "irons_spellbooks:fire_rune"
+        },
+        "s": {
+            "tag": "ice_and_fire_spellbooks:fire_scales"
+        }
+    },
+    "result": {
+        "item": "ice_and_fire_spellbooks:fire_dragon_priest_chestplate",
+        "count": 1
+    }
+}
