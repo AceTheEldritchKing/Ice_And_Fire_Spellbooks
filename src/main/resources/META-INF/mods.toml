@@ -64,3 +64,15 @@ Adds compatibility with Iron's Spells and Spellbooks and Ice and Fire.
     versionRange="[1.19.2,1.20)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.ice_and_fire_spellbooks]]
+    modId="irons_spellbooks"
+    mandatory=true
+    versionRange="[1.19.2-2.2.1,)"
+    ordering="AFTER"
+    side="BOTH"
+[[dependencies.ice_and_fire_spellbooks]]
+    modId="iceandfire"
+    mandatory=true
+    versionRange="[1.19.2-2.1.13+build.beta-3,)"
+    ordering="AFTER"
+    side="BOTH"
