@@ -1,15 +1,14 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor;
 
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
-import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.FireDragonPriestArmorItem;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.IceDragonPriestArmorItem;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
+import software.bernie.geckolib.model.DefaultedItemGeoModel;
 
-public class IceDragonPriestArmorModel extends AnimatedGeoModel<IceDragonPriestArmorItem> {
+public class IceDragonPriestArmorModel extends DefaultedItemGeoModel<IceDragonPriestArmorItem> {
     public IceDragonPriestArmorModel()
     {
-        super();
+        super(new ResourceLocation(IceAndFireSpellbooks.MOD_ID, ""));
     }
 
     @Override

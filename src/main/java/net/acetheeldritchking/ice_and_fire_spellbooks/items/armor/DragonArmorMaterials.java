@@ -8,10 +8,10 @@ import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -69,6 +69,16 @@ public enum DragonArmorMaterials implements ArmorMaterial {
 
     public int getDefenseForSlot(EquipmentSlot pSlot) {
         return this.slotProtections[pSlot.getIndex()];
+    }
+
+    @Override
+    public int getDurabilityForType(ArmorItem.Type pType) {
+        return 0;
+    }
+
+    @Override
+    public int getDefenseForType(ArmorItem.Type pType) {
+        return 0;
     }
 
     public int getEnchantmentValue() {
