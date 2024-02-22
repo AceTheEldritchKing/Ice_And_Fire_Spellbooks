@@ -1,6 +1,7 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks;
 
 import com.mojang.logging.LogUtils;
+import net.acetheeldritchking.ice_and_fire_spellbooks.registries.CreativeTabRegistry;
 import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ItemRegistries;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,6 +26,8 @@ public class IceAndFireSpellbooks
 
         // Items
         ItemRegistries.register(modEventBus);
+        // Creative Menu
+        CreativeTabRegistry.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

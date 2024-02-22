@@ -15,5 +15,7 @@
     "item.ice_and_fire_spellbooks.lightning_dragon_priest_helmet": "Lightning Dragon Priest Helmet",
     "item.ice_and_fire_spellbooks.lightning_dragon_priest_chestplate": "Lightning Dragon Priest Robes",
     "item.ice_and_fire_spellbooks.lightning_dragon_priest_leggings": "Lightning Dragon Priest Pants",
-    "item.ice_and_fire_spellbooks.lightning_dragon_priest_boots": "Lightning Dragon Priest Boots"
+    "item.ice_and_fire_spellbooks.lightning_dragon_priest_boots": "Lightning Dragon Priest Boots",
+
+    "tab.ice_and_fire_spellbooks.armor": "Ice and Fire: Spellbooks"
 }
