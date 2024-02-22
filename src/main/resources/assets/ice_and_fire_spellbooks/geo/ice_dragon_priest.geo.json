@@ -219,6 +219,7 @@
 				},
 				{
 					"name": "claws",
+					"parent": "armorLeftArm",
 					"pivot": [4, 22, 0],
 					"cubes": [
 						{"origin": [8.25, 14, -1], "size": [2, 3, 0], "uv": [9, 23]},
