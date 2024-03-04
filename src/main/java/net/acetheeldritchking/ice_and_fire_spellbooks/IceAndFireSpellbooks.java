@@ -1,6 +1,8 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks;
 
 import com.mojang.logging.LogUtils;
+import io.redspace.ironsspellbooks.item.SpellBook;
+import io.redspace.ironsspellbooks.render.SpellBookCurioRenderer;
 import net.acetheeldritchking.ice_and_fire_spellbooks.config.ArmorValueConfig;
 import net.acetheeldritchking.ice_and_fire_spellbooks.registries.CreativeTabRegistry;
 import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ItemRegistries;
@@ -15,6 +17,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(IceAndFireSpellbooks.MOD_ID)
@@ -49,19 +52,13 @@ public class IceAndFireSpellbooks
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents
     {
-        // Rendering armor
-        /*@SubscribeEvent
-        public static void registerRenderers(final EntityRenderersEvent.AddLayers event)
-        {
-            GeoArmorRenderer.registerArmorRenderer(FireDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new FireDragonPriestArmorModel()));
-            GeoArmorRenderer.registerArmorRenderer(IceDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new IceDragonPriestArmorModel()));
-            GeoArmorRenderer.registerArmorRenderer(LightningDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new LightningDragonPriestArmorModel()));
-        }*/
-
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            // nada
+            // curios :3c
+            event.enqueueWork(() -> {
+                ItemRegistries.getIFSItems().stream().filter(item -> item.get() instanceof SpellBook).forEach((item) -> CuriosRendererRegistry.register(item.get(), SpellBookCurioRenderer::new));
+            });
         }
     }
 }

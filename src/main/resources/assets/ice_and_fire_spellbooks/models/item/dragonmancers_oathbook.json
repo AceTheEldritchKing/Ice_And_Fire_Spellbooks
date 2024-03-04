@@ -1,6 +1,12 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "ice_and_fire_spellbooks:item/dragonmancers_oathbook"
+    "parent": "minecraft:item/handheld",
+    "loader": "forge:separate_transforms",
+    "base": {
+        "parent": "ice_and_fire_spellbooks:item/dragonmancers_oathbook_model"
+    },
+    "perspectives": {
+        "gui": {
+            "parent": "ice_and_fire_spellbooks:item/dragonmancers_oathbook_gui"
+        }
     }
 }
