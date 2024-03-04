@@ -1,22 +1,26 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.registries;
 
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
-import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
-import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.SpellRarity;
 import io.redspace.ironsspellbooks.item.spell_books.SimpleAttributeSpellBook;
+import io.redspace.ironsspellbooks.item.weapons.StaffItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
-import net.acetheeldritchking.ice_and_fire_spellbooks.items.DragonPriestStaffItem;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.FireDragonPriestArmorItem;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.IceDragonPriestArmorItem;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.LightningDragonPriestArmorItem;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Rarity;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.Collection;
+import java.util.Map;
+import java.util.UUID;
 
 public class ItemRegistries {
     public static final DeferredRegister<Item> ITEMS =
@@ -25,16 +29,18 @@ public class ItemRegistries {
     // Dragonmancer's Oathbook
     public static final RegistryObject<Item> DRAGONMANCERS_OATHBOOK = ITEMS.register
             ("dragonmancers_oathbook", () -> new SimpleAttributeSpellBook
-                    (10, SpellRarity.LEGENDARY, AttributeRegistry.SPELL_POWER.get(), 0.2D));
+                    (12, SpellRarity.LEGENDARY, AttributeRegistry.SPELL_POWER.get(), 0.2D));
 
     // Dragon Priest Staff
-    public static final RegistryObject<Item> DRAGON_PRIEST_STAFF = ITEMS.register("dragon_priest_staff", () -> new DragonPriestStaffItem
-            (new SpellDataRegistryHolder[]
-                    {
-                            new SpellDataRegistryHolder(SpellRegistry.ELECTROCUTE_SPELL, 8),
-                            new SpellDataRegistryHolder(SpellRegistry.CONE_OF_COLD_SPELL, 8),
-                            new SpellDataRegistryHolder(SpellRegistry.FIRE_BREATH_SPELL, 8)
-                    }));
+    public static final RegistryObject<Item> DRAGON_PRIEST_STAFF = ITEMS.register("dragon_priest_staff",
+            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 9, -3,
+                    Map.of(AttributeRegistry.FIRE_SPELL_POWER.get(),
+                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", .20, AttributeModifier.Operation.MULTIPLY_BASE),
+                            AttributeRegistry.ICE_SPELL_POWER.get(),
+                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.20, AttributeModifier.Operation.MULTIPLY_BASE),
+                            AttributeRegistry.LIGHTNING_SPELL_POWER.get(),
+                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.20, AttributeModifier.Operation.MULTIPLY_BASE)
+                            )));
 
     //       //
     // ARMOR //
@@ -69,6 +75,11 @@ public class ItemRegistries {
             () -> new LightningDragonPriestArmorItem(EquipmentSlot.LEGS, ItemPropertiesHelper.equipment().fireResistant()));
     public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_BOOTS = ITEMS.register("lightning_dragon_priest_boots",
             () -> new LightningDragonPriestArmorItem(EquipmentSlot.FEET, ItemPropertiesHelper.equipment().fireResistant()));
+
+    public static Collection<RegistryObject<Item>> getIFSItems()
+    {
+        return ITEMS.getEntries();
+    }
 
     public static void register(IEventBus eventBus)
     {
