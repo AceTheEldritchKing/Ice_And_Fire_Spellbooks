@@ -40,6 +40,8 @@ public class ItemRegistries {
                             new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.20, AttributeModifier.Operation.MULTIPLY_BASE),
                             AttributeRegistry.LIGHTNING_SPELL_POWER.get(),
                             new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.20, AttributeModifier.Operation.MULTIPLY_BASE)
+                            AttributeRegistry.COOLDOWN_REDUCTION.get(),
+                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.20, AttributeModifier.Operation.MULTIPLY_BASE)
                             )));
 
     //       //
