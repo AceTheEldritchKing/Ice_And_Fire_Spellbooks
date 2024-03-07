@@ -30,7 +30,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         });
     */
     // Fire Dragon Priest Regalia
-    FIRE_DRAGON_PRIEST("fire_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get())
+    FIRE_DRAGON_PRIEST("fire_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get())
     ),
     /*
     , Map.of(
@@ -39,7 +39,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
      */
 
     // Ice Dragon Priest Regalia
-    ICE_DRAGON_PRIEST("ice_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get())
+    ICE_DRAGON_PRIEST("ice_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get())
     ),
     /*
     , Map.of(
@@ -48,7 +48,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
      */
 
     // Lightning Dragon Priest Regalia
-    LIGHTNING_DRAGON_PRIEST("lightning_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get())
+    LIGHTNING_DRAGON_PRIEST("lightning_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get())
     );
     /*
     , Map.of(
@@ -133,6 +133,21 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         {
             builder.put(AttributeRegistry.MAX_MANA.get(), new AttributeModifier(uuid, "Armor maxMana",
                     maxMana, AttributeModifier.Operation.ADDITION));
+        }
+        if (firePower != 0 && DragonArmorMaterials.this == FIRE_DRAGON_PRIEST)
+        {
+            builder.put(AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier(uuid, "Fire power",
+                    firePower, AttributeModifier.Operation.MULTIPLY_BASE));
+        }
+        if (icePower != 0 && DragonArmorMaterials.this == ICE_DRAGON_PRIEST)
+        {
+            builder.put(AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier(uuid, "Ice power",
+                    icePower, AttributeModifier.Operation.MULTIPLY_BASE));
+        }
+        if (lightningPower != 0 && DragonArmorMaterials.this == LIGHTNING_DRAGON_PRIEST)
+        {
+            builder.put(AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier(uuid, "Lightning power",
+                    lightningPower, AttributeModifier.Operation.MULTIPLY_BASE));
         }
 
         return builder.build();
