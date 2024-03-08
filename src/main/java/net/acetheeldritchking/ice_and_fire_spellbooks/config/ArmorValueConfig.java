@@ -15,7 +15,7 @@ public class ArmorValueConfig {
 
     static
     {
-        dragonsteelArmorValue = setupConfig(configBuilder, List.of(7, 9, 12, 6));
+        dragonsteelArmorValue = setupConfig(configBuilder, List.of(6, 9, 12, 7));
         SPEC = configBuilder.build();
     }
 
@@ -23,7 +23,7 @@ public class ArmorValueConfig {
     {
         var config = new ArmorValues(
                 builder.worldRestart()
-                        .comment("Defines armor values for Dragon Priest armor. Default is [7, 9, 12, 6]")
+                        .comment("Defines armor values for Dragon Priest armor. Default is [6, 9, 12, 7]")
                         .comment("[head, legs, chest, feet]")
                         .defineList("dragonsteel_armor_values", () -> armorPoints, (p) -> true)
         );
