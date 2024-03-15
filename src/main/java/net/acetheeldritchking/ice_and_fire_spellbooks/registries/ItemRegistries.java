@@ -1,11 +1,13 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.registries;
 
-import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
-import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
-import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
-import io.redspace.ironsspellbooks.api.spells.SpellRarity;
 import io.redspace.ironsspellbooks.item.spell_books.SimpleAttributeSpellBook;
-import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
+import io.redspace.ironsspellbooks.registries.AttributeRegistry;
+import io.redspace.ironsspellbooks.spells.AbstractSpell;
+import io.redspace.ironsspellbooks.spells.SpellRarity;
+import io.redspace.ironsspellbooks.spells.fire.FireBreathSpell;
+import io.redspace.ironsspellbooks.spells.ice.ConeOfColdSpell;
+import io.redspace.ironsspellbooks.spells.lightning.ElectrocuteSpell;
+import io.redspace.ironsspellbooks.util.SpellbookModCreativeTabs;
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.DragonPriestStaffItem;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.FireDragonPriestArmorItem;
@@ -25,15 +27,15 @@ public class ItemRegistries {
     // Dragonmancer's Oathbook
     public static final RegistryObject<Item> DRAGONMANCERS_OATHBOOK = ITEMS.register
             ("dragonmancers_oathbook", () -> new SimpleAttributeSpellBook
-                    (10, SpellRarity.LEGENDARY, AttributeRegistry.SPELL_POWER.get(), 0.2D));
+                    (10, SpellRarity.LEGENDARY, AttributeRegistry.SPELL_POWER, 0.2D));
 
     // Dragon Priest Staff
     public static final RegistryObject<Item> DRAGON_PRIEST_STAFF = ITEMS.register("dragon_priest_staff", () -> new DragonPriestStaffItem
-            (new SpellDataRegistryHolder[]
+            (new AbstractSpell[]
                     {
-                            new SpellDataRegistryHolder(SpellRegistry.ELECTROCUTE_SPELL, 8),
-                            new SpellDataRegistryHolder(SpellRegistry.CONE_OF_COLD_SPELL, 8),
-                            new SpellDataRegistryHolder(SpellRegistry.FIRE_BREATH_SPELL, 8)
+                            new ElectrocuteSpell(8),
+                            new ConeOfColdSpell(8),
+                            new FireBreathSpell(8)
                     }));
 
     //       //
@@ -42,33 +44,33 @@ public class ItemRegistries {
 
     // Fire Dragon Priest
     public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_HELMET = ITEMS.register("fire_dragon_priest_helmet",
-            () -> new FireDragonPriestArmorItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new FireDragonPriestArmorItem(EquipmentSlot.HEAD, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
     public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_CHESTPLATE = ITEMS.register("fire_dragon_priest_chestplate",
-            () -> new FireDragonPriestArmorItem(EquipmentSlot.CHEST, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new FireDragonPriestArmorItem(EquipmentSlot.CHEST, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
     public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_LEGGINGS = ITEMS.register("fire_dragon_priest_leggings",
-            () -> new FireDragonPriestArmorItem(EquipmentSlot.LEGS, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new FireDragonPriestArmorItem(EquipmentSlot.LEGS, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
     public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_BOOTS = ITEMS.register("fire_dragon_priest_boots",
-            () -> new FireDragonPriestArmorItem(EquipmentSlot.FEET, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new FireDragonPriestArmorItem(EquipmentSlot.FEET, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
 
     // Ice Dragon Priest
     public static final RegistryObject<Item> ICE_DRAGON_PRIEST_HELMET = ITEMS.register("ice_dragon_priest_helmet",
-            () -> new IceDragonPriestArmorItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new IceDragonPriestArmorItem(EquipmentSlot.HEAD, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
     public static final RegistryObject<Item> ICE_DRAGON_PRIEST_CHESTPLATE = ITEMS.register("ice_dragon_priest_chestplate",
-            () -> new IceDragonPriestArmorItem(EquipmentSlot.CHEST, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new IceDragonPriestArmorItem(EquipmentSlot.CHEST, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
     public static final RegistryObject<Item> ICE_DRAGON_PRIEST_LEGGINGS = ITEMS.register("ice_dragon_priest_leggings",
-            () -> new IceDragonPriestArmorItem(EquipmentSlot.LEGS, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new IceDragonPriestArmorItem(EquipmentSlot.LEGS, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
     public static final RegistryObject<Item> ICE_DRAGON_PRIEST_BOOTS = ITEMS.register("ice_dragon_priest_boots",
-            () -> new IceDragonPriestArmorItem(EquipmentSlot.FEET, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new IceDragonPriestArmorItem(EquipmentSlot.FEET, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
 
     // Lightning Dragon Priest
     public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_HELMET = ITEMS.register("lightning_dragon_priest_helmet",
-            () -> new LightningDragonPriestArmorItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new LightningDragonPriestArmorItem(EquipmentSlot.HEAD, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
     public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_CHESTPLATE = ITEMS.register("lightning_dragon_priest_chestplate",
-            () -> new LightningDragonPriestArmorItem(EquipmentSlot.CHEST, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new LightningDragonPriestArmorItem(EquipmentSlot.CHEST, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
     public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_LEGGINGS = ITEMS.register("lightning_dragon_priest_leggings",
-            () -> new LightningDragonPriestArmorItem(EquipmentSlot.LEGS, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new LightningDragonPriestArmorItem(EquipmentSlot.LEGS, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
     public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_BOOTS = ITEMS.register("lightning_dragon_priest_boots",
-            () -> new LightningDragonPriestArmorItem(EquipmentSlot.FEET, ItemPropertiesHelper.equipment().fireResistant()));
+            () -> new LightningDragonPriestArmorItem(EquipmentSlot.FEET, new Item.Properties().tab(SpellbookModCreativeTabs.SPELL_EQUIPMENT_TAB).fireResistant()));
 
     public static void register(IEventBus eventBus)
     {
