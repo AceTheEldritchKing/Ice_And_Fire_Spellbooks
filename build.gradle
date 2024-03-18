@@ -29,6 +29,7 @@ minecraft {
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings channel: 'parchment', version: '2022.08.07-1.18.2'
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
@@ -167,7 +168,7 @@ dependencies {
     // runtimeOnly(fg.deobf("curse.maven:Jei-238222:4712866"))
 
     // Mixins
-    annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
 jar {
