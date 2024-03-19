@@ -9,13 +9,12 @@ import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.Map;
 import java.util.function.Supplier;
 
-public enum DragonArmorMaterials implements ArmorMaterial {
+public enum DragonArmorMaterials implements IFSArmorMaterial {
     /*
         Netherite
         NETHERITE("netherite", 37, new int[]{3, 6, 8, 3}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () -> {

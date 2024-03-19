@@ -28,9 +28,9 @@ public abstract class DragonArmorItem extends GeoArmorItem implements IAnimatabl
                     UUID.fromString("82A575D1-366A-4BBD-91F8-25DB6B804F06")};
     //private final Multimap<Attribute, AttributeModifier> ARMOR_ATTRIBUTES;
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    public final DragonArmorMaterials materialIn;
+    public final IFSArmorMaterial materialIn;
 
-    public DragonArmorItem(DragonArmorMaterials materialIn, EquipmentSlot slot, Properties settings) {
+    public DragonArmorItem(IFSArmorMaterial materialIn, EquipmentSlot slot, Properties settings) {
         super(materialIn, slot, settings);
         this.materialIn = materialIn;
     }
