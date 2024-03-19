@@ -1,10 +1,21 @@
-plugins {
-    id 'eclipse'
-    id 'maven-publish'
-    id 'net.minecraftforge.gradle' version '5.1.+'
-    id 'org.parchmentmc.librarian.forgegradle' version '1.+'
-    id 'org.spongepowered.mixin' version '0.7.+'
+buildscript {
+    repositories {
+        // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
+        maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.parchmentmc.org' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.spongepowered:mixingradle:0.7.+'
+        classpath 'org.parchmentmc:librarian:1.+'
+    }
 }
+
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'org.spongepowered.mixin'
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
+apply plugin: 'maven-publish'
 
 version = '1.2.0-1.18.2'
 group = 'net.acetheeldritchking.ice_and_fire_spellbooks' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -140,8 +151,8 @@ dependencies {
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
 
     // ISS
-    compileOnly fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:5172939")
-    runtimeOnly fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:5172939")
+    compileOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:${irons_spells_version}")
+    runtimeOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:${irons_spells_version}")
 
     // Geckolib
     implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
@@ -165,7 +176,7 @@ dependencies {
     implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5037952")
 
     // JEI
-    // runtimeOnly(fg.deobf("curse.maven:Jei-238222:4712866"))
+    runtimeOnly(fg.deobf("curse.maven:Jei-238222:4712866"))
 
     // Mixins
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
