@@ -6,7 +6,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
-public class IceDragonPriestArmorItem extends DragonArmorItem {
+public class IceDragonPriestArmorItem extends ImbuableDragonChestplateArmorItem {
     public IceDragonPriestArmorItem(Type type, Properties settings) {
         super(DragonArmorMaterials.ICE_DRAGON_PRIEST, type, settings);
     }
