@@ -164,6 +164,10 @@ dependencies {
     // Ice and Fire
     implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5122408")
 
+    // Better Combat - Does not boot up in client for me, ugh
+    // runtimeOnly fg.deobf("curse.maven:better-combat-by-daedelus-${better_combat_version}")
+    // runtimeOnly fg.deobf("curse.maven:cloth-config-348521:4633416")
+
     // JEI
     runtimeOnly(fg.deobf("curse.maven:Jei-238222:5101366"))
 
