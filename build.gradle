@@ -15,7 +15,6 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
-apply plugin: 'maven-publish'
 
 version = '1.2.0-1.18.2'
 group = 'net.acetheeldritchking.ice_and_fire_spellbooks' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -39,10 +38,9 @@ minecraft {
     //
     // Use non-default mappings at your own risk. They may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'parchment', version: '2022.08.07-1.18.2'
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    mappings channel: 'parchment', version: "2022.11.06-1.18.2"
 
-    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg') // Currently, this location cannot be changed from the default.
 
     runs {
         client {
@@ -155,13 +153,13 @@ dependencies {
     runtimeOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:${irons_spells_version}")
 
     // Geckolib
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.18:3.0.57')
+    implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${geckolib_version}")
 
     // Caelus
     runtimeOnly fg.deobf("top.theillusivec4.caelus:caelus-forge:${caelus_version}")
 
     // Player Animator
-    runtimeOnly fg.deobf("dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}")
+    implementation fg.deobf("dev.kosmx.player-anim:player-animation-lib-forge:${player_animator_version}")
 
     // Curios
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
@@ -176,7 +174,9 @@ dependencies {
     implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5037952")
 
     // JEI
-    runtimeOnly(fg.deobf("curse.maven:Jei-238222:4712866"))
+    compileOnly(fg.deobf("mezz.jei:jei-1.18.2-common-api:${jei_version}"))
+    compileOnly(fg.deobf("mezz.jei:jei-1.18.2-forge-api:${jei_version}"))
+    runtimeOnly(fg.deobf("mezz.jei:jei-1.18.2-forge:${jei_version}"))
 
     // Mixins
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

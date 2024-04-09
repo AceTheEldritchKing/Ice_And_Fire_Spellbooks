@@ -37,12 +37,14 @@ public class IceAndFireSpellbooks
 
     public IceAndFireSpellbooks()
     {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        //IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+        var bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Items
-        ItemRegistries.register(modEventBus);
+        ItemRegistries.register(bus);
 
-        modEventBus.addListener(this::commonSetup);
+        //modEventBus.addListener(this::commonSetup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
 
         // Configs
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ArmorValueConfig.SPEC, "ice_and_fire_spellbooks.toml");
@@ -53,6 +55,7 @@ public class IceAndFireSpellbooks
     private void commonSetup(final FMLCommonSetupEvent event)
     {
         // nada
+        LOGGER.info("HELLO FROM PREINIT");
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
@@ -66,12 +69,6 @@ public class IceAndFireSpellbooks
             GeoArmorRenderer.registerArmorRenderer(FireDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new FireDragonPriestArmorModel()));
             GeoArmorRenderer.registerArmorRenderer(IceDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new IceDragonPriestArmorModel()));
             GeoArmorRenderer.registerArmorRenderer(LightningDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new LightningDragonPriestArmorModel()));
-        }
-
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-            // nada
         }
     }
 }
