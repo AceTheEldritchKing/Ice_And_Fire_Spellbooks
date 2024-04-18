@@ -1,7 +1,7 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
 
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
-import io.redspace.ironsspellbooks.registries.AttributeRegistry;
+import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import net.acetheeldritchking.ice_and_fire_spellbooks.config.ArmorValueConfig;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;

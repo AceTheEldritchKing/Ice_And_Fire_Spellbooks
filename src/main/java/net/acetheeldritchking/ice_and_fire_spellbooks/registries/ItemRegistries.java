@@ -1,9 +1,11 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.registries;
 
+import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
+import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
+import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
+import io.redspace.ironsspellbooks.api.spells.SpellRarity;
 import io.redspace.ironsspellbooks.item.spell_books.SimpleAttributeSpellBook;
-import io.redspace.ironsspellbooks.registries.AttributeRegistry;
-import io.redspace.ironsspellbooks.spells.AbstractSpell;
-import io.redspace.ironsspellbooks.spells.SpellRarity;
 import io.redspace.ironsspellbooks.spells.fire.FireBreathSpell;
 import io.redspace.ironsspellbooks.spells.ice.ConeOfColdSpell;
 import io.redspace.ironsspellbooks.spells.lightning.ElectrocuteSpell;
@@ -27,15 +29,15 @@ public class ItemRegistries {
     // Dragonmancer's Oathbook
     public static final RegistryObject<Item> DRAGONMANCERS_OATHBOOK = ITEMS.register
             ("dragonmancers_oathbook", () -> new SimpleAttributeSpellBook
-                    (10, SpellRarity.LEGENDARY, AttributeRegistry.SPELL_POWER, 0.2D));
+                    (10, SpellRarity.LEGENDARY, AttributeRegistry.SPELL_POWER.get(), 0.2D));
 
     // Dragon Priest Staff
     public static final RegistryObject<Item> DRAGON_PRIEST_STAFF = ITEMS.register("dragon_priest_staff", () -> new DragonPriestStaffItem
-            (new AbstractSpell[]
+            (new SpellDataRegistryHolder[]
                     {
-                            new ElectrocuteSpell(8),
-                            new ConeOfColdSpell(8),
-                            new FireBreathSpell(8)
+                            new SpellDataRegistryHolder(SpellRegistry.ELECTROCUTE_SPELL, 8),
+                            new SpellDataRegistryHolder(SpellRegistry.CONE_OF_COLD_SPELL, 8),
+                            new SpellDataRegistryHolder(SpellRegistry.FIRE_BREATH_SPELL, 8)
                     }));
 
     //       //

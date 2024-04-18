@@ -2,10 +2,10 @@ package net.acetheeldritchking.ice_and_fire_spellbooks.items;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.api.registry.SpellDataRegistryHolder;
+import io.redspace.ironsspellbooks.api.spells.SpellRarity;
 import io.redspace.ironsspellbooks.item.UniqueSpellBook;
-import io.redspace.ironsspellbooks.registries.AttributeRegistry;
-import io.redspace.ironsspellbooks.spells.AbstractSpell;
-import io.redspace.ironsspellbooks.spells.SpellRarity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -17,7 +17,7 @@ import java.util.UUID;
 public class DragonPriestStaffItem extends UniqueSpellBook {
     private final LazyOptional<Multimap<Attribute, AttributeModifier>> lazyOptional;
 
-    public DragonPriestStaffItem(AbstractSpell[] spells) {
+    public DragonPriestStaffItem(SpellDataRegistryHolder[] spells) {
         super(SpellRarity.EPIC, spells);
         lazyOptional = LazyOptional.of(this::buildAttributeMap);
     }

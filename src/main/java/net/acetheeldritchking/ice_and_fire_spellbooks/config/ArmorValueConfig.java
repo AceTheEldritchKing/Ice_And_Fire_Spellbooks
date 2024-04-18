@@ -33,7 +33,7 @@ public class ArmorValueConfig {
         return new int[dragonsteelArmorValue.armor().get().size()];
     }
 
-    public static record ArmorValues (ForgeConfigSpec.ConfigValue<List<? extends Integer>> armor)
+    public record ArmorValues (ForgeConfigSpec.ConfigValue<List<? extends Integer>> armor)
     {
         //
     }
