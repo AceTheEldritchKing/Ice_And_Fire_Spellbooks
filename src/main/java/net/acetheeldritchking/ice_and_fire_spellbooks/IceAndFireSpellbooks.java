@@ -5,12 +5,8 @@ import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
 import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.render.SpellBookCurioRenderer;
 import net.acetheeldritchking.ice_and_fire_spellbooks.config.ArmorValueConfig;
-import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.FireDragonPriestArmorModel;
-import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.IceDragonPriestArmorModel;
-import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.LightningDragonPriestArmorModel;
-import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.FireDragonPriestArmorItem;
-import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.IceDragonPriestArmorItem;
-import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.LightningDragonPriestArmorItem;
+import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.*;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.*;
 import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ItemRegistries;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -63,9 +59,17 @@ public class IceAndFireSpellbooks
         @SubscribeEvent
         public static void registerRenderers(final EntityRenderersEvent.AddLayers event)
         {
+            // Dragon Priest Armor
             GeoArmorRenderer.registerArmorRenderer(FireDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new FireDragonPriestArmorModel()));
             GeoArmorRenderer.registerArmorRenderer(IceDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new IceDragonPriestArmorModel()));
             GeoArmorRenderer.registerArmorRenderer(LightningDragonPriestArmorItem.class, () -> new GenericCustomArmorRenderer(new LightningDragonPriestArmorModel()));
+
+            // Dragon Priest Masks
+            GeoArmorRenderer.registerArmorRenderer(ToornahkriinDragonPriestMaskItem.class, () -> new GenericCustomArmorRenderer(new ToornahkriinDragonPriestMaskModel()));
+            GeoArmorRenderer.registerArmorRenderer(FodaanDragonPriestMaskItem.class, () -> new GenericCustomArmorRenderer(new FodaanDragonPriestMaskModel()));
+            GeoArmorRenderer.registerArmorRenderer(VulonqoDragonPriestMaskItem.class, () -> new GenericCustomArmorRenderer(new VulonqoDragonPriestMaskModel()));
+            GeoArmorRenderer.registerArmorRenderer(VulnilviirDragonPriestMaskItem.class, () -> new GenericCustomArmorRenderer(new VulnilviirDragonPriestMaskModel()));
+            GeoArmorRenderer.registerArmorRenderer(VulsilahDragonPriestMaskItem.class, () -> new GenericCustomArmorRenderer(new VulsilahDragonPriestMaskModel()));
         }
 
         @SubscribeEvent

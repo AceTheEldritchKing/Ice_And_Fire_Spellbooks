@@ -2,6 +2,7 @@ package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
 
 import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.acetheeldritchking.ice_and_fire_spellbooks.config.ArmorValueConfig;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -9,6 +10,7 @@ import net.minecraft.util.LazyLoadedValue;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.Map;
@@ -37,6 +39,46 @@ public enum DragonArmorMaterials implements IFSArmorMaterial {
     LIGHTNING_DRAGON_PRIEST("lightning_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get()), Map.of(
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 150, AttributeModifier.Operation.ADDITION),
             AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier("Lightning Power", .1, AttributeModifier.Operation.MULTIPLY_BASE)
+    )),
+
+    // Toornahkriin Dragon Mask (Fire)
+    TOORNAHKRIIN_MASK("toornahkriin", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get()), Map.of(
+            AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 200, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
+            AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier("Fire Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+    )),
+
+    // Fodaan Dragon Mask (Ice)
+    FODAAN_MASK("fodaan", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get()), Map.of(
+            AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 200, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
+            AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier("Ice Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+    )),
+
+    // Vulonqo Dragon Mask (Lightning)
+    VULONQO_MASK("vulonqo", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get()), Map.of(
+            AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 200, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
+            AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier("Lightning Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+    )),
+
+    // Vulnilviir Dragon Mask (Ender)
+    VULNILVIIR_MASK("vulnilviir", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MAGIC_CLOTH.get()), Map.of(
+            AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 200, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
+            AttributeRegistry.ENDER_SPELL_POWER.get(), new AttributeModifier("Ender Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
+    )),
+
+    // Vulsilah Dragon Mask (Eldritch)
+    VULSILAH_MASK("vulsilah", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MAGIC_CLOTH.get()), Map.of(
+            AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 200, AttributeModifier.Operation.ADDITION),
+            AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
+            AttributeRegistry.ELDRITCH_SPELL_POWER.get(), new AttributeModifier("Eldritch Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
     ));
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};

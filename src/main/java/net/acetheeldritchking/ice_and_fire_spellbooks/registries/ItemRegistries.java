@@ -78,6 +78,16 @@ public class ItemRegistries {
     public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_BOOTS = ITEMS.register("lightning_dragon_priest_boots",
             () -> new LightningDragonPriestArmorItem(EquipmentSlot.FEET, ItemPropertiesHelper.equipment().fireResistant()));
 
+    // Toornahkriin Dragon Mask (Fire)
+
+    // Fodaan Dragon Mask (Ice)
+
+    // Vulonqo Dragon Mask (Lightning)
+
+    // Vulnilviir Dragon Mask (Ender)
+
+    // Vulsilah Dragon Mask (Eldritch)
+
     public static Collection<RegistryObject<Item>> getIFSItems()
     {
         return ITEMS.getEntries();

@@ -11,10 +11,12 @@ public class ArmorValueConfig {
 
     // Config Values
     public static ArmorValues dragonsteelArmorValue;
+    public static ArmorValues dragonsteelMaskArmorValue;
 
     static
     {
         dragonsteelArmorValue = setupConfig(configBuilder, List.of(6, 9, 12, 7));
+        dragonsteelMaskArmorValue = setupConfig(configBuilder, List.of(5, 0, 0, 0));
         SPEC = configBuilder.build();
     }
 
@@ -22,7 +24,7 @@ public class ArmorValueConfig {
     {
         var config = new ArmorValues(
                 builder.worldRestart()
-                        .comment("Defines armor values for Dragon Priest armor. Default is [6, 9, 12, 7]")
+                        .comment("Defines armor values for the Dragon Priest and Masks armor. Default is [6, 9, 12, 7]")
                         .comment("[head, legs, chest, feet]")
                         .defineList("dragonsteel_armor_values", () -> armorPoints, (p) -> true)
         );
