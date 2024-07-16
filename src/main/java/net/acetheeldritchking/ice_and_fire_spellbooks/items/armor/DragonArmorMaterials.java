@@ -42,7 +42,7 @@ public enum DragonArmorMaterials implements IFSArmorMaterial {
     )),
 
     // Toornahkriin Dragon Mask (Fire)
-    TOORNAHKRIIN_MASK("toornahkriin", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get()), Map.of(
+    TOORNAHKRIIN_MASK("toornahkriin", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get()), Map.of(
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 200, AttributeModifier.Operation.ADDITION),
             AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
             AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier("Fire Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),

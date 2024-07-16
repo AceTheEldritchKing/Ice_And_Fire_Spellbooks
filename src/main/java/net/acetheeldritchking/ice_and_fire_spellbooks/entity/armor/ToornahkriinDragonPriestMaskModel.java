@@ -23,6 +23,6 @@ public class ToornahkriinDragonPriestMaskModel extends AnimatedGeoModel<Toornahk
 
     @Override
     public ResourceLocation getAnimationResource(ToornahkriinDragonPriestMaskItem animatable) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "animations/wizard_armor_animation.json");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "animations/dragon_priest.animation.json");
     }
 }

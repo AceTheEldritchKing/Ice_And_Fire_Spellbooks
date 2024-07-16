@@ -54,6 +54,11 @@
 					"pivot": [0, 24, 0]
 				},
 				{
+					"name": "armorLeggingTorsoLayer",
+					"parent": "bipedBody",
+					"pivot": [0, 24, 0]
+				},
+				{
 					"name": "armorBody",
 					"parent": "bipedBody",
 					"pivot": [0, 24, 0],

@@ -13,16 +13,16 @@ public class VulsilahDragonPriestMaskModel extends AnimatedGeoModel<VulsilahDrag
 
     @Override
     public ResourceLocation getModelResource(VulsilahDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/fodaan.geo.json");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/vulsilah.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(VulsilahDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/fodaan.png");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/vulsilah.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(VulsilahDragonPriestMaskItem animatable) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "animations/wizard_armor_animation.json");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "animations/dragon_priest.animation.json");
     }
 }

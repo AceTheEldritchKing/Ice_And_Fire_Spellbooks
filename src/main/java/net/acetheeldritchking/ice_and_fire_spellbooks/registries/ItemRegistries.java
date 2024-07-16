@@ -6,9 +6,7 @@ import io.redspace.ironsspellbooks.item.spell_books.SimpleAttributeSpellBook;
 import io.redspace.ironsspellbooks.item.weapons.StaffItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
-import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.FireDragonPriestArmorItem;
-import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.IceDragonPriestArmorItem;
-import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.LightningDragonPriestArmorItem;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.*;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
@@ -79,14 +77,24 @@ public class ItemRegistries {
             () -> new LightningDragonPriestArmorItem(EquipmentSlot.FEET, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Toornahkriin Dragon Mask (Fire)
+    public static final RegistryObject<Item> TOORNAHKRIIN_MASK_HELMET = ITEMS.register("toornahkriin",
+            () -> new ToornahkriinDragonPriestMaskItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Fodaan Dragon Mask (Ice)
+    public static final RegistryObject<Item> FODAAN_MASK_HELMET = ITEMS.register("fodaan",
+            () -> new FodaanDragonPriestMaskItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Vulonqo Dragon Mask (Lightning)
+    public static final RegistryObject<Item> VULONQO_MASK_HELMET = ITEMS.register("vulonqo",
+            () -> new VulonqoDragonPriestMaskItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Vulnilviir Dragon Mask (Ender)
+    public static final RegistryObject<Item> VULNILVIIR_MASK_HELMET = ITEMS.register("vulnilviir",
+            () -> new VulnilviirDragonPriestMaskItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Vulsilah Dragon Mask (Eldritch)
+    public static final RegistryObject<Item> VULSILAH_MASK_HELMET = ITEMS.register("vulsilah",
+            () -> new VulsilahDragonPriestMaskItem(EquipmentSlot.HEAD, ItemPropertiesHelper.equipment().fireResistant()));
 
     public static Collection<RegistryObject<Item>> getIFSItems()
     {

@@ -23,6 +23,6 @@ public class VulnilviirDragonPriestMaskModel extends AnimatedGeoModel<Vulnilviir
 
     @Override
     public ResourceLocation getAnimationResource(VulnilviirDragonPriestMaskItem animatable) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "animations/wizard_armor_animation.json");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "animations/dragon_priest.animation.json");
     }
 }
