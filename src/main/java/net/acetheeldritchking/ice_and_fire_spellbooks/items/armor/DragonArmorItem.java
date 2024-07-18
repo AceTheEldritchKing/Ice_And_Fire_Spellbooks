@@ -1,5 +1,6 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
 
+import com.github.alexthe666.iceandfire.item.IProtectAgainstDragonItem;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -19,7 +20,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 import java.util.Map;
 import java.util.UUID;
 
-public abstract class DragonArmorItem extends GeoArmorItem implements IAnimatable {
+public abstract class DragonArmorItem extends GeoArmorItem implements IAnimatable, IProtectAgainstDragonItem {
     // Looking at how ISS does this...
     private static final UUID[] ARMOR_ATTRIBUTE_UUID_PER_SLOT = new UUID[]
             {UUID.fromString("F7BFFA65-547A-49D2-8804-3D533070E432"),

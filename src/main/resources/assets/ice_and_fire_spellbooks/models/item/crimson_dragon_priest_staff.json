@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "crimson_dragon_priest_staff",
-		"particle": "crimson_dragon_priest_staff"
+		"0": "ice_and_fire_spellbooks:item/staff/crimson_dragon_priest_staff",
+		"particle": "ice_and_fire_spellbooks:item/staff/crimson_dragon_priest_staff"
 	},
 	"elements": [
 		{

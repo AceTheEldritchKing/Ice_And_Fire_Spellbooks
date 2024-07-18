@@ -1,6 +1,9 @@
 {
     "item.ice_and_fire_spellbooks.dragonmancers_oathbook": "Dragonmancer's Oathbook",
     "item.ice_and_fire_spellbooks.dragon_priest_staff": "Dragon Priest Staff",
+    "item.ice_and_fire_spellbooks.crimson_dragon_priest_staff": "Infernal Dragon Priest Staff",
+    "item.ice_and_fire_spellbooks.silver_dragon_priest_staff": "Glacial Dragon Priest Staff",
+    "item.ice_and_fire_spellbooks.thunderous_dragon_priest_staff": "Thunderous Dragon Priest Staff",
 
     "item.ice_and_fire_spellbooks.fire_dragon_priest_helmet": "Fire Dragon Priest Helmet",
     "item.ice_and_fire_spellbooks.fire_dragon_priest_chestplate": "Fire Dragon Priest Robes",
