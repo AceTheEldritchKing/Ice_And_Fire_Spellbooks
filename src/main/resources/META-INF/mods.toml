@@ -29,7 +29,7 @@ displayName="Ice and Fire: Spellbooks" #mandatory
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="ice_and_fire_spellbooks.png" #optional
 # A text field displayed in the mod UI
-credits="Iron's Spells and Spellbooks for being so cool cool, and Ice and Fire because I love dragons" #optional
+credits="Iron's Spells and Spellbooks for being so cool cool, Ice and Fire because I love dragons, and Duke Sjorn Paradox for the amazing textures for the Dragon Priest masks and staffs!" #optional
 # A text field displayed in the mod UI
 authors="Ace The Eldritch King" #optional
 # Display Test controls the display for your mod in the server connection screen

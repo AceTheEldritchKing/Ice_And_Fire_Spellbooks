@@ -17,5 +17,14 @@
     "item.ice_and_fire_spellbooks.lightning_dragon_priest_leggings": "Lightning Dragon Priest Pants",
     "item.ice_and_fire_spellbooks.lightning_dragon_priest_boots": "Lightning Dragon Priest Boots",
 
-    "tab.ice_and_fire_spellbooks.armor": "Ice and Fire: Spellbooks"
+    "tab.ice_and_fire_spellbooks.armor": "Ice and Fire: Spellbooks",
+
+    "item.ice_and_fire_spellbooks.toornahkriin": "Toornahkriin",
+    "item.ice_and_fire_spellbooks.fodaan": "Fodaan",
+    "item.ice_and_fire_spellbooks.vulonqo": "Vulonqo",
+    "item.ice_and_fire_spellbooks.vulnilviir": "Vulnilviir",
+    "item.ice_and_fire_spellbooks.vulsilah": "Vulsilah",
+
+    "item.ice_and_fire_spellbooks.wooden_mask": "Wooden Mask",
+    "item.wooden_mask.tooltip": "The mask vibrates with a strange frequency, perhaps it can be attuned? [WIP]"
 }
