@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:empty",
+    "pools": [
+        {
+            "name": "ifs_lightning_dragon_cave_extended",
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "functions": [
+                        {
+                            "count": {
+                                "type": "minecraft:uniform",
+                                "max": 1.0,
+                                "min": 1.0
+                            },
+                            "function": "minecraft:set_count"
+                        }
+                    ],
+                    "name": "ice_and_fire_spellbooks:vulonqo"
+                }
+            ]
+        }
+    ]
+}

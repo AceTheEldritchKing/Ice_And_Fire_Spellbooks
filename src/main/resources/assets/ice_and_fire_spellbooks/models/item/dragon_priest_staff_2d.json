@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "ice_and_fire_spellbooks:item/dragon_priest_staff_item"
+        "layer0": "ice_and_fire_spellbooks:item/staff/dragon_priest_staff_item"
     }
 }

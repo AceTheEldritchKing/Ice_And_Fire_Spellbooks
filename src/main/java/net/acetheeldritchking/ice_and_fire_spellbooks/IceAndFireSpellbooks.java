@@ -4,6 +4,8 @@ import com.mojang.logging.LogUtils;
 import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.render.SpellBookCurioRenderer;
 import net.acetheeldritchking.ice_and_fire_spellbooks.config.ArmorValueConfig;
+import net.acetheeldritchking.ice_and_fire_spellbooks.events.ServerEvents;
+import net.acetheeldritchking.ice_and_fire_spellbooks.loot.IFSLootModifiers;
 import net.acetheeldritchking.ice_and_fire_spellbooks.registries.CreativeTabRegistry;
 import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ItemRegistries;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,10 +32,15 @@ public class IceAndFireSpellbooks
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        // Event handlers
+        MinecraftForge.EVENT_BUS.register(new ServerEvents());
         // Items
         ItemRegistries.register(modEventBus);
         // Creative Menu
         CreativeTabRegistry.register(modEventBus);
+        // Loot Tables
+        IFSLootModifiers.register(modEventBus);
+        // Spells
 
         modEventBus.addListener(this::commonSetup);
 

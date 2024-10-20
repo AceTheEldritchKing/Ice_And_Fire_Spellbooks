@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "entries": [
+    "ice_and_fire_spellbooks:fire_dragon_cave_additions",
+    "ice_and_fire_spellbooks:ice_dragon_cave_additions",
+    "ice_and_fire_spellbooks:lightning_dragon_cave_additions",
+    "ice_and_fire_spellbooks:end_city_treasure_additions",
+    "ice_and_fire_spellbooks:ancient_city_additions"
+  ]
+}

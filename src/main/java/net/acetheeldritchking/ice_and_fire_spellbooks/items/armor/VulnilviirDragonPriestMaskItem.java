@@ -1,0 +1,33 @@
+package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
+
+import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
+import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
+import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
+import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.VulnilviirDragonPriestMaskModel;
+import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.VulonqoDragonPriestMaskModel;
+import net.minecraft.world.item.ItemStack;
+import software.bernie.geckolib.renderer.GeoArmorRenderer;
+
+public class VulnilviirDragonPriestMaskItem extends DragonArmorItem implements IPresetSpellContainer {
+    public VulnilviirDragonPriestMaskItem(Type slot, Properties settings) {
+        super(DragonArmorMaterials.VULNILVIIR_MASK, slot, settings);
+    }
+
+    @Override
+    public void initializeSpellContainer(ItemStack itemStack) {
+        if (itemStack == null)
+        {
+            return;
+        }
+        if (!ISpellContainer.isSpellContainer(itemStack))
+        {
+            var spellContainer = ISpellContainer.create(2, true, true);
+            spellContainer.save(itemStack);
+        }
+    }
+
+    @Override
+    public GeoArmorRenderer<?> supplyRenderer() {
+        return new GenericCustomArmorRenderer<>(new VulnilviirDragonPriestMaskModel());
+    }
+}

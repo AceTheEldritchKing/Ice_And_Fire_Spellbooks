@@ -12,10 +12,12 @@ public class ArmorValueConfig {
 
     // Config Values
     public static ArmorValues dragonsteelArmorValue;
+    public static ArmorValues dragonsteelMaskArmorValue;
 
     static
     {
         dragonsteelArmorValue = setupConfig(configBuilder, List.of(6, 9, 12, 7));
+        dragonsteelMaskArmorValue = setupConfig(configBuilder, List.of(5, 0, 0, 0));
         SPEC = configBuilder.build();
     }
 

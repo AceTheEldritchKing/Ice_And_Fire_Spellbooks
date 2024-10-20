@@ -1,0 +1,14 @@
+{
+    "type": "iceandfire:dragonforge",
+    "dragon_type": "lightning",
+    "cook_time": 1000,
+    "input": {
+        "item": "ice_and_fire_spellbooks:dragon_priest_staff"
+    },
+    "blood": {
+        "item": "iceandfire:lightning_dragon_blood"
+    },
+    "result": {
+        "item": "ice_and_fire_spellbooks:thunderous_dragon_priest_staff"
+    }
+}

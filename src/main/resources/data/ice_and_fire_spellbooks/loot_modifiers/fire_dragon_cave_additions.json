@@ -1,0 +1,14 @@
+{
+    "conditions": [
+        {
+            "condition": "forge:loot_table_id",
+            "loot_table_id": "iceandfire:chest/fire_dragon_male_cave"
+        },
+        {
+            "condition": "minecraft:random_chance",
+            "chance": 0.2
+        }
+    ],
+    "type": "ice_and_fire_spellbooks:add_to_table",
+    "loot_table": "ice_and_fire_spellbooks:chests/toornahkriin_mask"
+}
