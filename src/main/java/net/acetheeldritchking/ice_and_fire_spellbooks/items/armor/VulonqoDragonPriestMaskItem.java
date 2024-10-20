@@ -18,7 +18,7 @@ public class VulonqoDragonPriestMaskItem extends DragonArmorItem implements IPre
         }
         if (!ISpellContainer.isSpellContainer(itemStack))
         {
-            var spellContainer = ISpellContainer.create(1, true, true);
+            var spellContainer = ISpellContainer.create(2, true, true);
             spellContainer.save(itemStack);
         }
     }

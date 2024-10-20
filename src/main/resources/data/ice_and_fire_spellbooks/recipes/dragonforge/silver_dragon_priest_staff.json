@@ -1,0 +1,14 @@
+{
+    "type": "iceandfire:dragonforge",
+    "dragon_type": "ice",
+    "cook_time": 1000,
+    "input": {
+        "item": "ice_and_fire_spellbooks:dragon_priest_staff"
+    },
+    "blood": {
+        "item": "iceandfire:ice_dragon_blood"
+    },
+    "result": {
+        "item": "ice_and_fire_spellbooks:silver_dragon_priest_staff"
+    }
+}

@@ -41,26 +41,26 @@ public class ServerEvents {
             float multiplier = 1.0F;
             if (event.getEntity().getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof DragonArmorItem)
             {
-                System.out.println("Did head");
+                //System.out.println("Did head");
                 multiplier -= 0.1F;
             }
             if (event.getEntity().getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DragonArmorItem)
             {
-                System.out.println("Did chest");
+                //System.out.println("Did chest");
                 multiplier -= 0.3F;
             }
             if (event.getEntity().getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof DragonArmorItem)
             {
-                System.out.println("Did legs");
+                //System.out.println("Did legs");
                 multiplier -= 0.2F;
             }
             if (event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() instanceof DragonArmorItem)
             {
-                System.out.println("Did feet");
+                //System.out.println("Did feet");
                 multiplier -= 0.1F;
             }
 
-            System.out.println("Reduced damage...");
+            //System.out.println("Reduced damage...");
             float baseAmount = event.getAmount();
             event.setAmount(baseAmount * multiplier);
         }

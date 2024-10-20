@@ -18,7 +18,7 @@ public class FodaanDragonPriestMaskItem extends DragonArmorItem implements IPres
         }
         if (!ISpellContainer.isSpellContainer(itemStack))
         {
-            var spellContainer = ISpellContainer.create(1, true, true);
+            var spellContainer = ISpellContainer.create(2, true, true);
             spellContainer.save(itemStack);
         }
     }

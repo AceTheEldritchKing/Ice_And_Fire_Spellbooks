@@ -7,6 +7,7 @@ import io.redspace.ironsspellbooks.item.weapons.StaffItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.*;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.misc.WoodenDragonPriestMask;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.Item;
@@ -68,6 +69,9 @@ public class ItemRegistries {
                             AttributeRegistry.COOLDOWN_REDUCTION.get(),
                             new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.20, AttributeModifier.Operation.MULTIPLY_BASE)
                     )));
+
+    // Wooden Dragon Priest Mask (Crafting item)
+    public static final RegistryObject<Item> WOODEN_DRAGON_PRIEST_MASK = ITEMS.register("wooden_mask", () -> new WoodenDragonPriestMask(ItemPropertiesHelper.equipment()));
 
     //       //
     // ARMOR //

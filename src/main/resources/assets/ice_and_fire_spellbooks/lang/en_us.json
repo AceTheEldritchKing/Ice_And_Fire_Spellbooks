@@ -24,5 +24,8 @@
     "item.ice_and_fire_spellbooks.fodaan": "Fodaan",
     "item.ice_and_fire_spellbooks.vulonqo": "Vulonqo",
     "item.ice_and_fire_spellbooks.vulnilviir": "Vulnilviir",
-    "item.ice_and_fire_spellbooks.vulsilah": "Vulsilah"
+    "item.ice_and_fire_spellbooks.vulsilah": "Vulsilah",
+
+    "item.ice_and_fire_spellbooks.wooden_mask": "Wooden Mask",
+    "item.wooden_mask.tooltip": "The mask vibrates with a strange frequency, perhaps it can be attuned? [WIP]"
 }

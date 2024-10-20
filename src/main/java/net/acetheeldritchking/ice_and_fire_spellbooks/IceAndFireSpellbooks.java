@@ -8,6 +8,7 @@ import net.acetheeldritchking.ice_and_fire_spellbooks.config.ArmorValueConfig;
 import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.*;
 import net.acetheeldritchking.ice_and_fire_spellbooks.events.ServerEvents;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.*;
+import net.acetheeldritchking.ice_and_fire_spellbooks.loot.IFSLootModifiers;
 import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ItemRegistries;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -40,6 +41,9 @@ public class IceAndFireSpellbooks
         MinecraftForge.EVENT_BUS.register(new ServerEvents());
         // Items
         ItemRegistries.register(modEventBus);
+        // Loot Tables
+        IFSLootModifiers.register(modEventBus);
+        // Spells
 
         modEventBus.addListener(this::commonSetup);
 
