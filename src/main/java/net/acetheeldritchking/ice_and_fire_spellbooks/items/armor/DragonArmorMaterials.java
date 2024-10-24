@@ -136,6 +136,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         double firePower = 0.1D;
         double icePower = 0.1D;
         double lightningPower = 0.1D;
+        double spellPower = 0.05D;
         // Dragon Priest
         double maxManaMask = 225;
         double manaRegen = 0.30D;
@@ -157,6 +158,11 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         {
             builder.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(uuid, "Armor knockback resistance",
                     knockbackResistance, AttributeModifier.Operation.ADDITION));
+        }
+        if (spellPower != 0)
+        {
+            builder.put(AttributeRegistry.SPELL_POWER.get(), new AttributeModifier(uuid, "Base Power",
+                    spellPower, AttributeModifier.Operation.MULTIPLY_BASE));
         }
         if (maxMana != 0 && (DragonArmorMaterials.this == FIRE_DRAGON_PRIEST || DragonArmorMaterials.this == ICE_DRAGON_PRIEST || DragonArmorMaterials.this == LIGHTNING_DRAGON_PRIEST))
         {
