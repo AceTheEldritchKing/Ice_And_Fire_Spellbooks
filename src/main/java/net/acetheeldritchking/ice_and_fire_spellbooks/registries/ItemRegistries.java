@@ -28,7 +28,7 @@ public class ItemRegistries {
     // Dragonmancer's Oathbook
     public static final RegistryObject<Item> DRAGONMANCERS_OATHBOOK = ITEMS.register
             ("dragonmancers_oathbook", () -> new SimpleAttributeSpellBook
-                    (12, SpellRarity.LEGENDARY, AttributeRegistry.SPELL_POWER.get(), 0.2D));
+                    (12, SpellRarity.LEGENDARY, AttributeRegistry.SPELL_POWER.get(), 0.2D, 300));
 
     // Dragon Priest Staff
     public static final RegistryObject<Item> DRAGON_PRIEST_STAFF = ITEMS.register("dragon_priest_staff",
