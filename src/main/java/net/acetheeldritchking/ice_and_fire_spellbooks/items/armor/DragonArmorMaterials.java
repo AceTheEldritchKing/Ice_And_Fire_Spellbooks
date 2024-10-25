@@ -26,19 +26,22 @@ public enum DragonArmorMaterials implements IFSArmorMaterial {
     // Fire Dragon Priest Regalia
     FIRE_DRAGON_PRIEST("fire_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get()), Map.of(
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 175, AttributeModifier.Operation.ADDITION),
-            AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier("Fire Power", .1, AttributeModifier.Operation.MULTIPLY_BASE)
+            AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier("Fire Power", .1, AttributeModifier.Operation.MULTIPLY_BASE),
+            AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Base Power", .05, AttributeModifier.Operation.MULTIPLY_BASE)
     )),
 
     // Ice Dragon Priest Regalia
     ICE_DRAGON_PRIEST("ice_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get()), Map.of(
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 175, AttributeModifier.Operation.ADDITION),
-            AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier("Ice Power", .1, AttributeModifier.Operation.MULTIPLY_BASE)
+            AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier("Ice Power", .1, AttributeModifier.Operation.MULTIPLY_BASE),
+            AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Base Power", .05, AttributeModifier.Operation.MULTIPLY_BASE)
     )),
 
     // Lightning Dragon Priest Regalia
     LIGHTNING_DRAGON_PRIEST("lightning_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get()), Map.of(
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 175, AttributeModifier.Operation.ADDITION),
-            AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier("Lightning Power", .1, AttributeModifier.Operation.MULTIPLY_BASE)
+            AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier("Lightning Power", .1, AttributeModifier.Operation.MULTIPLY_BASE),
+            AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Base Power", .05, AttributeModifier.Operation.MULTIPLY_BASE)
     )),
 
     // Toornahkriin Dragon Mask (Fire)
@@ -46,6 +49,7 @@ public enum DragonArmorMaterials implements IFSArmorMaterial {
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 225, AttributeModifier.Operation.ADDITION),
             AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
             AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier("Fire Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Base Power", .05, AttributeModifier.Operation.MULTIPLY_BASE),
             Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
     )),
 
@@ -54,6 +58,7 @@ public enum DragonArmorMaterials implements IFSArmorMaterial {
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 225, AttributeModifier.Operation.ADDITION),
             AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
             AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier("Ice Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Base Power", .05, AttributeModifier.Operation.MULTIPLY_BASE),
             Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
     )),
 
@@ -62,6 +67,7 @@ public enum DragonArmorMaterials implements IFSArmorMaterial {
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 225, AttributeModifier.Operation.ADDITION),
             AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
             AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier("Lightning Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Base Power", .05, AttributeModifier.Operation.MULTIPLY_BASE),
             Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
     )),
 
@@ -70,6 +76,7 @@ public enum DragonArmorMaterials implements IFSArmorMaterial {
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 225, AttributeModifier.Operation.ADDITION),
             AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
             AttributeRegistry.ENDER_SPELL_POWER.get(), new AttributeModifier("Ender Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Base Power", .05, AttributeModifier.Operation.MULTIPLY_BASE),
             Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
     )),
 
@@ -78,6 +85,7 @@ public enum DragonArmorMaterials implements IFSArmorMaterial {
             AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 225, AttributeModifier.Operation.ADDITION),
             AttributeRegistry.MANA_REGEN.get(), new AttributeModifier("Mana Regen", .30, AttributeModifier.Operation.MULTIPLY_TOTAL),
             AttributeRegistry.ELDRITCH_SPELL_POWER.get(), new AttributeModifier("Eldritch Power", .15, AttributeModifier.Operation.MULTIPLY_BASE),
+            AttributeRegistry.SPELL_POWER.get(), new AttributeModifier("Base Power", .05, AttributeModifier.Operation.MULTIPLY_BASE),
             Attributes.ATTACK_DAMAGE, new AttributeModifier("minus_damage", -0.20, AttributeModifier.Operation.MULTIPLY_TOTAL)
     ));
 

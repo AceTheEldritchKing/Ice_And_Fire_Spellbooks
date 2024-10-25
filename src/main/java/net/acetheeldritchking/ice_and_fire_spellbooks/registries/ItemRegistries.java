@@ -32,7 +32,7 @@ public class ItemRegistries {
 
     // Dragon Priest Staff
     public static final RegistryObject<Item> DRAGON_PRIEST_STAFF = ITEMS.register("dragon_priest_staff",
-            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 9, -3,
+            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 6, -3,
                     Map.of(AttributeRegistry.FIRE_SPELL_POWER.get(),
                             new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.10, AttributeModifier.Operation.MULTIPLY_BASE),
                             AttributeRegistry.ICE_SPELL_POWER.get(),
@@ -45,7 +45,7 @@ public class ItemRegistries {
 
     // Fire Dragon Priest Staff
     public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_STAFF = ITEMS.register("crimson_dragon_priest_staff",
-            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 9, -3,
+            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 7.5, -3,
                     Map.of(AttributeRegistry.FIRE_SPELL_POWER.get(),
                             new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.25, AttributeModifier.Operation.MULTIPLY_BASE),
                             AttributeRegistry.COOLDOWN_REDUCTION.get(),
@@ -54,7 +54,7 @@ public class ItemRegistries {
 
     // Ice Dragon Priest Staff
     public static final RegistryObject<Item> ICE_DRAGON_PRIEST_STAFF = ITEMS.register("silver_dragon_priest_staff",
-            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 9, -3,
+            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 7.5, -3,
                     Map.of(AttributeRegistry.ICE_SPELL_POWER.get(),
                             new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.25, AttributeModifier.Operation.MULTIPLY_BASE),
                             AttributeRegistry.COOLDOWN_REDUCTION.get(),
@@ -63,7 +63,7 @@ public class ItemRegistries {
 
     // Lightning Dragon Priest Staff
     public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_STAFF = ITEMS.register("thunderous_dragon_priest_staff",
-            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 9, -3,
+            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 7.5, -3,
                     Map.of(AttributeRegistry.LIGHTNING_SPELL_POWER.get(),
                             new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.25, AttributeModifier.Operation.MULTIPLY_BASE),
                             AttributeRegistry.COOLDOWN_REDUCTION.get(),
