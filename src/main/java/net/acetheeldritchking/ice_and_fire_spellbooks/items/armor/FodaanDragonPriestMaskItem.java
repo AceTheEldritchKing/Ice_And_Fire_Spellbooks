@@ -3,27 +3,27 @@ package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
 import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
+import io.redspace.ironsspellbooks.registries.ComponentRegistry;
 import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.FodaanDragonPriestMaskModel;
+import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ArmorMaterialRegistries;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 public class FodaanDragonPriestMaskItem extends DragonArmorItem implements IPresetSpellContainer {
     public FodaanDragonPriestMaskItem(Type slot, Properties settings) {
-        super(DragonArmorMaterials.FODAAN_MASK, slot, settings);
+        super(ArmorMaterialRegistries.FODAAN_MASK, slot, settings);
     }
 
     @Override
     public void initializeSpellContainer(ItemStack itemStack) {
-        if (itemStack == null)
-        {
+        if (itemStack == null) {
             return;
         }
-        if (!ISpellContainer.isSpellContainer(itemStack))
-        {
-            var spellContainer = ISpellContainer.create(2, true, true);
-            spellContainer.save(itemStack);
+        if (!ISpellContainer.isSpellContainer(itemStack)) {
+            ISpellContainer spellContainer = ISpellContainer.create(2, true, true);
+            itemStack.set(ComponentRegistry.SPELL_CONTAINER, spellContainer);
         }
     }
 

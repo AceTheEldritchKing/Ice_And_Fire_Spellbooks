@@ -5,9 +5,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class WoodenDragonPriestMask extends Item {
@@ -16,9 +15,8 @@ public class WoodenDragonPriestMask extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("item.wooden_mask.tooltip").withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
-
-        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+    public void appendHoverText(@NotNull ItemStack stack, @NotNull TooltipContext context, List<Component> tooltipComponents, @NotNull TooltipFlag tooltipFlag) {
+        tooltipComponents.add(Component.translatable("item.wooden_mask.tooltip").withStyle(ChatFormatting.GRAY, ChatFormatting.ITALIC));
+        super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
     }
 }

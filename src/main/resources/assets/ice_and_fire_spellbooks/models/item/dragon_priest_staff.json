@@ -3,7 +3,7 @@
     "base": {
         "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_3d"
     },
-    "loader": "forge:separate_transforms",
+    "loader": "neoforge:separate_transforms",
     "perspectives": {
         "gui": {
           "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_2d",

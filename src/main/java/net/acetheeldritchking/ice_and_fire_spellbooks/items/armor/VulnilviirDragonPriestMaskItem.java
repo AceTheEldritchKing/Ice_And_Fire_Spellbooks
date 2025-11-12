@@ -3,28 +3,27 @@ package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
 import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
+import io.redspace.ironsspellbooks.registries.ComponentRegistry;
 import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.VulnilviirDragonPriestMaskModel;
-import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.VulonqoDragonPriestMaskModel;
+import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ArmorMaterialRegistries;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.api.distmarker.OnlyIn;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
 public class VulnilviirDragonPriestMaskItem extends DragonArmorItem implements IPresetSpellContainer {
     public VulnilviirDragonPriestMaskItem(Type slot, Properties settings) {
-        super(DragonArmorMaterials.VULNILVIIR_MASK, slot, settings);
+        super(ArmorMaterialRegistries.VULNILVIIR_MASK, slot, settings);
     }
 
     @Override
     public void initializeSpellContainer(ItemStack itemStack) {
-        if (itemStack == null)
-        {
+        if (itemStack == null) {
             return;
         }
-        if (!ISpellContainer.isSpellContainer(itemStack))
-        {
-            var spellContainer = ISpellContainer.create(2, true, true);
-            spellContainer.save(itemStack);
+        if (!ISpellContainer.isSpellContainer(itemStack)) {
+            ISpellContainer spellContainer = ISpellContainer.create(2, true, true);
+            itemStack.set(ComponentRegistry.SPELL_CONTAINER, spellContainer);
         }
     }
 

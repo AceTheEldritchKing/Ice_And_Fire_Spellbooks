@@ -6,23 +6,22 @@ import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.DefaultedItemGeoModel;
 
 public class FodaanDragonPriestMaskModel extends DefaultedItemGeoModel<FodaanDragonPriestMaskItem> {
-    public FodaanDragonPriestMaskModel()
-    {
-        super(new ResourceLocation(IceAndFireSpellbooks.MOD_ID, ""));
+    public FodaanDragonPriestMaskModel() {
+        super(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, ""));
     }
 
     @Override
     public ResourceLocation getModelResource(FodaanDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/fodaan.geo.json");
+        return ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "geo/fodaan.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(FodaanDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/fodaan.png");
+        return ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/fodaan.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(FodaanDragonPriestMaskItem animatable) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "animations/dragon_priest.animation.json");
+        return ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "animations/dragon_priest.animation.json");
     }
 }
