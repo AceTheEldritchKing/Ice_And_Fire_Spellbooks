@@ -3,7 +3,6 @@ package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
 import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.registries.ComponentRegistry;
-import net.acetheeldritchking.ice_and_fire_spellbooks.registries.ArmorMaterialRegistries;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorMaterial;

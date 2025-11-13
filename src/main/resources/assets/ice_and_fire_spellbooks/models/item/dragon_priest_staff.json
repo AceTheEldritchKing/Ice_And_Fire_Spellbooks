@@ -1,19 +1,19 @@
 {
-    "parent": "forge:item/default",
-    "base": {
-        "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_3d"
+  "parent": "forge:item/default",
+  "base": {
+    "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_3d"
+  },
+  "loader": "neoforge:separate_transforms",
+  "perspectives": {
+    "gui": {
+      "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_2d",
+      "gui_light": "front"
     },
-    "loader": "neoforge:separate_transforms",
-    "perspectives": {
-        "gui": {
-          "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_2d",
-          "gui_light": "front"
-        },
-        "ground": {
-          "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_2d"
-        },
-        "fixed": {
-          "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_2d"
-        }
+    "ground": {
+      "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_2d"
+    },
+    "fixed": {
+      "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_2d"
     }
+  }
 }

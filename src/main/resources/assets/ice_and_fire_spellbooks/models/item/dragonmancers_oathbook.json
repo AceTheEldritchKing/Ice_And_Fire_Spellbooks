@@ -1,12 +1,12 @@
 {
-    "parent": "minecraft:item/handheld",
-    "loader": "neoforge:separate_transforms",
-    "base": {
-        "parent": "ice_and_fire_spellbooks:item/dragonmancers_oathbook_model"
-    },
-    "perspectives": {
-        "gui": {
-            "parent": "ice_and_fire_spellbooks:item/dragonmancers_oathbook_gui"
-        }
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "ice_and_fire_spellbooks:item/dragonmancers_oathbook_model"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "ice_and_fire_spellbooks:item/dragonmancers_oathbook_gui"
     }
+  }
 }
