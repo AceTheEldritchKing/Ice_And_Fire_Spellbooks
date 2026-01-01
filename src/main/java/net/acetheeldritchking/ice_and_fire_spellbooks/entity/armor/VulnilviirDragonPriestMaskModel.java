@@ -14,12 +14,12 @@ public class VulnilviirDragonPriestMaskModel extends DefaultedItemGeoModel<Vulni
 
     @Override
     public ResourceLocation getModelResource(VulnilviirDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/vulnilviir.geo.json");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/dragon_priest_masks_new_ender.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(VulnilviirDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/vulnilviir.png");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/dragon_priest_mask_ender.png");
     }
 
     @Override

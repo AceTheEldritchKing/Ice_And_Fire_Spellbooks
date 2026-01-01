@@ -1,19 +1,15 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.events;
 
-import com.github.alexthe666.iceandfire.entity.props.EntityDataProvider;
-import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.DragonArmorItem;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber
 public class ServerEvents {
-    @SubscribeEvent
+    /*@SubscribeEvent
     public static void onLivingTickEvent(LivingEvent.LivingTickEvent event)
     {
         // Add compat for Frostward ring here
@@ -26,7 +22,7 @@ public class ServerEvents {
                 EntityDataProvider.getCapability(livingEntity).ifPresent(data -> data.frozenData.setFrozen(livingEntity, 0));
             }
         }
-    }
+    }*/
 
     @SubscribeEvent
     public static void onLivingDamageEvent(LivingHurtEvent event)

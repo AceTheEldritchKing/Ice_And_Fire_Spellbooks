@@ -13,12 +13,12 @@ public class FodaanDragonPriestMaskModel extends DefaultedItemGeoModel<FodaanDra
 
     @Override
     public ResourceLocation getModelResource(FodaanDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/fodaan.geo.json");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/dragon_priest_masks_new_ice.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(FodaanDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/fodaan.png");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/dragon_priest_mask_ice.png");
     }
 
     @Override

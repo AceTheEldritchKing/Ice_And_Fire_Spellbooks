@@ -13,12 +13,12 @@ public class VulonqoDragonPriestMaskModel extends DefaultedItemGeoModel<VulonqoD
 
     @Override
     public ResourceLocation getModelResource(VulonqoDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/vulonqo.geo.json");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/dragon_priest_masks_new_lightning.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(VulonqoDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/vulonqo.png");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/dragon_priest_mask_lightning.png");
     }
 
     @Override

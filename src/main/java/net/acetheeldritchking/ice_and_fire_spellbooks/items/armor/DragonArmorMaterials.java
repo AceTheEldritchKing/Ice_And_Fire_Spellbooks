@@ -86,7 +86,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
     private final float knockbackResistance;
     private final LazyLoadedValue<Ingredient> repairIngredient;
 
-    private DragonArmorMaterials(String pName, int pDurabilityMultiplier, ArmorValueConfig.ArmorValues protectionMap, int pEnchantmentValue, SoundEvent pSound, float pToughness, float pKnockbackResistance, Supplier<Ingredient> pRepairIngredient) {
+    DragonArmorMaterials(String pName, int pDurabilityMultiplier, ArmorValueConfig.ArmorValues protectionMap, int pEnchantmentValue, SoundEvent pSound, float pToughness, float pKnockbackResistance, Supplier<Ingredient> pRepairIngredient) {
         this.name = pName;
         this.durabilityMultiplier = pDurabilityMultiplier;
         this.protectionFunctionForType = protectionMap;
@@ -259,7 +259,11 @@ public enum DragonArmorMaterials implements ArmorMaterial {
 
     @Override
     public int getDefenseForType(ArmorItem.Type type) {
-        return -1;
+        try{
+            return ArmorValueConfig.dragonsteelArmorValue.armor().get().get(type.getSlot().getIndex());
+        }catch (Exception e){
+            return -1;
+        }
     }
 
     public int getEnchantmentValue() {

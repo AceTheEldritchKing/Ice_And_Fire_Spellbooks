@@ -16,8 +16,9 @@ public class ArmorValueConfig {
 
     static
     {
-        dragonsteelArmorValue = setupConfig(configBuilder, List.of(6, 9, 12, 7));
-        dragonsteelMaskArmorValue = setupConfig(configBuilder, List.of(5, 0, 0, 0));
+        dragonsteelArmorValue = setupConfig(configBuilder, List.of(6, 9, 12, 6));
+        dragonsteelMaskArmorValue = setupDragonPriestMaskConfig(configBuilder, List.of(0, 0, 0, 5));
+
         SPEC = configBuilder.build();
     }
 
@@ -25,8 +26,19 @@ public class ArmorValueConfig {
     {
         var config = new ArmorValues(
                 builder.worldRestart()
-                        .comment("Defines armor values for Dragon Priest armor. Default is [6, 9, 12, 7]")
-                        .comment("[head, legs, chest, feet]")
+                        .comment("Defines armor values for Dragon Priest armor. Default is [6, 9, 12, 6]")
+                        .comment("[feet, legs, chest, head]")
+                        .defineList("dragonsteel_armor_values", () -> armorPoints, (p) -> true)
+        );
+        return config;
+    }
+
+    private static ArmorValues setupDragonPriestMaskConfig(ForgeConfigSpec.Builder builder, List<Integer> armorPoints)
+    {
+        var config = new ArmorValues(
+                builder.worldRestart()
+                        .comment("Defines armor values for Dragon Priest Masks [0, 0, 0, 5]")
+                        .comment("[feet, legs, chest, head]")
                         .defineList("dragonsteel_armor_values", () -> armorPoints, (p) -> true)
         );
         return config;

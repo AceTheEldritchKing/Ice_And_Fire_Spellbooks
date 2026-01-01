@@ -3,7 +3,6 @@ package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
 import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
-import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.VulonqoDragonPriestMaskModel;
 import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.VulsilahDragonPriestMaskModel;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;

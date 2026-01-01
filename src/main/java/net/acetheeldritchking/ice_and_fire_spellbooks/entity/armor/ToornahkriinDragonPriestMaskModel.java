@@ -13,12 +13,12 @@ public class ToornahkriinDragonPriestMaskModel extends DefaultedItemGeoModel<Too
 
     @Override
     public ResourceLocation getModelResource(ToornahkriinDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/toornahkriin.geo.json");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/dragon_priest_masks_new_fire.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(ToornahkriinDragonPriestMaskItem object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/toornahkriin.png");
+        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/dragon_priest_mask_fire.png");
     }
 
     @Override
