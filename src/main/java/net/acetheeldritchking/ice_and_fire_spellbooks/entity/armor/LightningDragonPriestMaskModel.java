@@ -1,28 +1,28 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor;
 
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
-import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.VulonqoDragonPriestMaskItem;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.masks.LightningDragonPriestMaskItem;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.DefaultedItemGeoModel;
 
-public class VulonqoDragonPriestMaskModel extends DefaultedItemGeoModel<VulonqoDragonPriestMaskItem> {
-    public VulonqoDragonPriestMaskModel()
+public class LightningDragonPriestMaskModel extends DefaultedItemGeoModel<LightningDragonPriestMaskItem> {
+    public LightningDragonPriestMaskModel()
     {
         super(new ResourceLocation(IceAndFireSpellbooks.MOD_ID, ""));
     }
 
     @Override
-    public ResourceLocation getModelResource(VulonqoDragonPriestMaskItem object) {
+    public ResourceLocation getModelResource(LightningDragonPriestMaskItem object) {
         return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/dragon_priest_masks_new_lightning.geo.json");
     }
 
     @Override
-    public ResourceLocation getTextureResource(VulonqoDragonPriestMaskItem object) {
+    public ResourceLocation getTextureResource(LightningDragonPriestMaskItem object) {
         return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/models/armor/dragon_priest_mask_lightning.png");
     }
 
     @Override
-    public ResourceLocation getAnimationResource(VulonqoDragonPriestMaskItem animatable) {
+    public ResourceLocation getAnimationResource(LightningDragonPriestMaskItem animatable) {
         return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "animations/dragon_priest.animation.json");
     }
 }

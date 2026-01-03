@@ -7,6 +7,7 @@ import io.redspace.ironsspellbooks.item.weapons.StaffItem;
 import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.*;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.masks.*;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.misc.WoodenDragonPriestMask;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.staffs.FireDragonPriestStaff;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.staffs.IceDragonPriestStaff;
@@ -93,24 +94,24 @@ public class ItemRegistries {
             () -> new LightningDragonPriestArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Toornahkriin Dragon Mask (Fire)
-    public static final RegistryObject<Item> TOORNAHKRIIN_MASK_HELMET = ITEMS.register("toornahkriin",
-            () -> new ToornahkriinDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
+    public static final RegistryObject<Item> FIRE_MASK_HELMET = ITEMS.register("toornahkriin",
+            () -> new FireDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Fodaan Dragon Mask (Ice)
-    public static final RegistryObject<Item> FODAAN_MASK_HELMET = ITEMS.register("fodaan",
-            () -> new FodaanDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
+    public static final RegistryObject<Item> ICE_MASK_HELMET = ITEMS.register("fodaan",
+            () -> new IceDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Vulonqo Dragon Mask (Lightning)
-    public static final RegistryObject<Item> VULONQO_MASK_HELMET = ITEMS.register("vulonqo",
-            () -> new VulonqoDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
+    public static final RegistryObject<Item> LIGHTNING_MASK_HELMET = ITEMS.register("vulonqo",
+            () -> new LightningDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Vulnilviir Dragon Mask (Ender)
-    public static final RegistryObject<Item> VULNILVIIR_MASK_HELMET = ITEMS.register("vulnilviir",
-            () -> new VulnilviirDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
+    public static final RegistryObject<Item> ENDER_MASK_HELMET = ITEMS.register("vulnilviir",
+            () -> new EnderDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
 
     // Vulsilah Dragon Mask (Eldritch)
-    public static final RegistryObject<Item> VULSILAH_MASK_HELMET = ITEMS.register("vulsilah",
-            () -> new VulsilahDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
+    public static final RegistryObject<Item> ELDRITCH_MASK_HELMET = ITEMS.register("vulsilah",
+            () -> new EldritchDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
 
     public static Collection<RegistryObject<Item>> getIFSItems()
     {

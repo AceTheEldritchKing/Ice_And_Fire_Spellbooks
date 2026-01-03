@@ -1,6 +1,5 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
 
-import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
@@ -30,50 +29,35 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         });
     */
     // Fire Dragon Priest Regalia
-    FIRE_DRAGON_PRIEST("fire_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get())
+    FIRE_DRAGON_PRIEST("fire_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get())
     ),
-    /*
-    , Map.of(
-            //AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 150, AttributeModifier.Operation.ADDITION),
-            //AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier("Fire Power", .1, AttributeModifier.Operation.MULTIPLY_BASE)
-     */
 
     // Ice Dragon Priest Regalia
-    ICE_DRAGON_PRIEST("ice_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get())
+    ICE_DRAGON_PRIEST("ice_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get())
     ),
-    /*
-    , Map.of(
-            //AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 150, AttributeModifier.Operation.ADDITION),
-            //AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier("Ice Power", .1, AttributeModifier.Operation.MULTIPLY_BASE)
-     */
 
     // Lightning Dragon Priest Regalia
-    LIGHTNING_DRAGON_PRIEST("lightning_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get())
+    LIGHTNING_DRAGON_PRIEST("lightning_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get())
     ),
-    /*
-    , Map.of(
-            //AttributeRegistry.MAX_MANA.get(), new AttributeModifier("Max Mana", 150, AttributeModifier.Operation.ADDITION),
-            //AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier("Lightning Power", .1, AttributeModifier.Operation.MULTIPLY_BASE)
-     */
 
     // Toornahkriin Dragon Mask (Fire)
-    TOORNAHKRIIN_MASK("toornahkriin", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get())
+    FIRE_DRAGON_PRIEST_MASK("fire_dragon_mask", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get())
     ),
 
     // Fodaan Dragon Mask (Ice)
-    FODAAN_MASK("fodaan", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get())
+    ICE_DRAGON_PRIEST_MASK("ice_dragon_mask", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get())
     ),
 
     // Vulonqo Dragon Mask (Lightning)
-    VULONQO_MASK("vulonqo", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get())
+    LIGHTNING_DRAGON_MASK("lightning_dragon_mask", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get())
     ),
 
     // Vulnilviir Dragon Mask (Ender)
-    VULNILVIIR_MASK("vulnilviir", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MAGIC_CLOTH.get())
+    ENDER_DRAGON_PRIEST_MASK("ender_dragon_mask", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get())
     ),
 
     // Vulsilah Dragon Mask (Eldritch)
-    VULSILAH_MASK("vulsilah", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MAGIC_CLOTH.get())
+    ELDRITCH_DRAGON_PRIEST_MASK("eldritch_dragon_mask", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(ItemRegistry.MITHRIL_WEAVE.get())
     );
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
@@ -186,42 +170,42 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         }
 
         // Dragon Priest Masks //
-        if (maxManaMask != 0 && (DragonArmorMaterials.this == TOORNAHKRIIN_MASK || DragonArmorMaterials.this == FODAAN_MASK || DragonArmorMaterials.this == VULONQO_MASK || DragonArmorMaterials.this == VULNILVIIR_MASK || DragonArmorMaterials.this == VULSILAH_MASK))
+        if (maxManaMask != 0 && (DragonArmorMaterials.this == FIRE_DRAGON_PRIEST_MASK || DragonArmorMaterials.this == ICE_DRAGON_PRIEST_MASK || DragonArmorMaterials.this == LIGHTNING_DRAGON_MASK || DragonArmorMaterials.this == ENDER_DRAGON_PRIEST_MASK || DragonArmorMaterials.this == ELDRITCH_DRAGON_PRIEST_MASK))
         {
             builder.put(AttributeRegistry.MAX_MANA.get(), new AttributeModifier(uuid, "Armor maxMana",
                     maxManaMask, AttributeModifier.Operation.ADDITION));
         }
-        if (manaRegen != 0 && (DragonArmorMaterials.this == TOORNAHKRIIN_MASK || DragonArmorMaterials.this == FODAAN_MASK || DragonArmorMaterials.this == VULONQO_MASK || DragonArmorMaterials.this == VULNILVIIR_MASK || DragonArmorMaterials.this == VULSILAH_MASK))
+        if (manaRegen != 0 && (DragonArmorMaterials.this == FIRE_DRAGON_PRIEST_MASK || DragonArmorMaterials.this == ICE_DRAGON_PRIEST_MASK || DragonArmorMaterials.this == LIGHTNING_DRAGON_MASK || DragonArmorMaterials.this == ENDER_DRAGON_PRIEST_MASK || DragonArmorMaterials.this == ELDRITCH_DRAGON_PRIEST_MASK))
         {
             builder.put(AttributeRegistry.MANA_REGEN.get(), new AttributeModifier(uuid, "Mana Regen",
                     manaRegen, AttributeModifier.Operation.MULTIPLY_TOTAL));
         }
-        if (reduceDamage != 0 && (DragonArmorMaterials.this == TOORNAHKRIIN_MASK || DragonArmorMaterials.this == FODAAN_MASK || DragonArmorMaterials.this == VULONQO_MASK || DragonArmorMaterials.this == VULNILVIIR_MASK || DragonArmorMaterials.this == VULSILAH_MASK))
+        if (reduceDamage != 0 && (DragonArmorMaterials.this == FIRE_DRAGON_PRIEST_MASK || DragonArmorMaterials.this == ICE_DRAGON_PRIEST_MASK || DragonArmorMaterials.this == LIGHTNING_DRAGON_MASK || DragonArmorMaterials.this == ENDER_DRAGON_PRIEST_MASK || DragonArmorMaterials.this == ELDRITCH_DRAGON_PRIEST_MASK))
         {
             builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, "minus_damage",
                     reduceDamage, AttributeModifier.Operation.MULTIPLY_TOTAL));
         }
-        if (firePowerMask != 0 && DragonArmorMaterials.this == TOORNAHKRIIN_MASK)
+        if (firePowerMask != 0 && DragonArmorMaterials.this == FIRE_DRAGON_PRIEST_MASK)
         {
             builder.put(AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier(uuid, "Fire power",
                     firePowerMask, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (icePowerMask != 0 && DragonArmorMaterials.this == FODAAN_MASK)
+        if (icePowerMask != 0 && DragonArmorMaterials.this == ICE_DRAGON_PRIEST_MASK)
         {
             builder.put(AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier(uuid, "Ice power",
                     icePowerMask, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (lightningPowerMask != 0 && DragonArmorMaterials.this == VULONQO_MASK)
+        if (lightningPowerMask != 0 && DragonArmorMaterials.this == LIGHTNING_DRAGON_MASK)
         {
             builder.put(AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier(uuid, "Lightning power",
                     lightningPowerMask, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (enderPowerMask != 0 && DragonArmorMaterials.this == VULNILVIIR_MASK)
+        if (enderPowerMask != 0 && DragonArmorMaterials.this == ENDER_DRAGON_PRIEST_MASK)
         {
             builder.put(AttributeRegistry.ENDER_SPELL_POWER.get(), new AttributeModifier(uuid, "Ender power",
                     enderPowerMask, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (eldritchPowerMask != 0 && DragonArmorMaterials.this == VULSILAH_MASK)
+        if (eldritchPowerMask != 0 && DragonArmorMaterials.this == ELDRITCH_DRAGON_PRIEST_MASK)
         {
             builder.put(AttributeRegistry.ELDRITCH_SPELL_POWER.get(), new AttributeModifier(uuid, "Eldritch power",
                     eldritchPowerMask, AttributeModifier.Operation.MULTIPLY_BASE));

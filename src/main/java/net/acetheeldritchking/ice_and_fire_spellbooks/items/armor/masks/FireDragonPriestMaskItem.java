@@ -1,18 +1,19 @@
-package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
+package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.masks;
 
 import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
 import io.redspace.ironsspellbooks.entity.armor.GenericCustomArmorRenderer;
-import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.FodaanDragonPriestMaskModel;
-import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.ToornahkriinDragonPriestMaskModel;
+import net.acetheeldritchking.ice_and_fire_spellbooks.entity.armor.FireDragonPriestMaskModel;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.DragonArmorItem;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.DragonArmorMaterials;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
-public class ToornahkriinDragonPriestMaskItem extends DragonArmorItem implements IPresetSpellContainer {
-    public ToornahkriinDragonPriestMaskItem(Type slot, Properties settings) {
-        super(DragonArmorMaterials.TOORNAHKRIIN_MASK, slot, settings);
+public class FireDragonPriestMaskItem extends DragonArmorItem implements IPresetSpellContainer {
+    public FireDragonPriestMaskItem(Type slot, Properties settings) {
+        super(DragonArmorMaterials.FIRE_DRAGON_PRIEST_MASK, slot, settings);
     }
 
     @Override
@@ -31,6 +32,6 @@ public class ToornahkriinDragonPriestMaskItem extends DragonArmorItem implements
     @Override
     @OnlyIn(Dist.CLIENT)
     public GeoArmorRenderer<?> supplyRenderer() {
-        return new GenericCustomArmorRenderer<>(new ToornahkriinDragonPriestMaskModel());
+        return new GenericCustomArmorRenderer<>(new FireDragonPriestMaskModel());
     }
 }

@@ -38,17 +38,6 @@ public class ArmorValueConfig {
         return config;
     }
 
-    private static ArmorValues setupDragonPriestMaskConfig(ForgeConfigSpec.Builder builder, List<Integer> armorPoints)
-    {
-        var config = new ArmorValues(
-                builder.worldRestart()
-                        .comment("Defines armor values for Dragon Priest Masks [0, 0, 0, 5]")
-                        .comment("[feet, legs, chest, head]")
-                        .defineList("dragonsteel_mask_armor_values", () -> armorPoints, (p) -> true)
-        );
-        return config;
-    }
-
     public static record ArmorValues (ForgeConfigSpec.ConfigValue<List<? extends Integer>> armor)
     {
         //

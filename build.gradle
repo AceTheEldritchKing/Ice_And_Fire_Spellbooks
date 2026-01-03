@@ -162,8 +162,7 @@ dependencies {
     // Citadel
     implementation fg.deobf("curse.maven:citadel-331936:5075402")
 
-    // Ice and Fire
-    implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5122408")
+    // Ice and Fire II
 
     // Better Combat - Does not boot up in client for me, ugh
     // runtimeOnly fg.deobf("curse.maven:better-combat-by-daedelus-${better_combat_version}")
