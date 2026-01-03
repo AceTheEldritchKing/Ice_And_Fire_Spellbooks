@@ -131,7 +131,7 @@ configurations.all {
 }
 
 dependencies {
-    minecraft 'net.minecraftforge:forge:1.20.1-47.1.1'
+    minecraft 'net.minecraftforge:forge:1.20.1-47.4.0'
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
@@ -139,11 +139,12 @@ dependencies {
     // implementation fg.deobf("com.tterrag.registrate:Registrate:MC${mc_version}-${registrate_version}") // Adds registrate as a dependency
 
     // ISS
-    compileOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:${irons_spells_version}")
-    runtimeOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:${irons_spells_version}")
+    implementation fg.deobf("curse.maven:irons-spells-n-spellbooks-855414:7402504")
+    //compileOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:${irons_spells_version}")
+    //runtimeOnly fg.deobf("io.redspace.ironsspellbooks:irons_spellbooks:${irons_spells_version}")
 
     // Geckolib
-    implementation fg.deobf('software.bernie.geckolib:geckolib-forge-1.20.1:4.3.1')
+    implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${geckolib_version}")
 
     // Caelus
     runtimeOnly fg.deobf("top.theillusivec4.caelus:caelus-forge:${caelus_version}")

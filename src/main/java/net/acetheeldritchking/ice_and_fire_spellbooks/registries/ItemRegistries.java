@@ -8,6 +8,9 @@ import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.*;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.misc.WoodenDragonPriestMask;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.staffs.FireDragonPriestStaff;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.staffs.IceDragonPriestStaff;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.staffs.LightningDragonPriestStaff;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
@@ -44,31 +47,13 @@ public class ItemRegistries {
                     )));
 
     // Fire Dragon Priest Staff
-    public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_STAFF = ITEMS.register("crimson_dragon_priest_staff",
-            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 7, -3,
-                    Map.of(AttributeRegistry.FIRE_SPELL_POWER.get(),
-                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.25, AttributeModifier.Operation.MULTIPLY_BASE),
-                            AttributeRegistry.COOLDOWN_REDUCTION.get(),
-                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.20, AttributeModifier.Operation.MULTIPLY_BASE)
-                    )));
+    public static final RegistryObject<Item> FIRE_DRAGON_PRIEST_STAFF = ITEMS.register("crimson_dragon_priest_staff", FireDragonPriestStaff::new);
 
     // Ice Dragon Priest Staff
-    public static final RegistryObject<Item> ICE_DRAGON_PRIEST_STAFF = ITEMS.register("silver_dragon_priest_staff",
-            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 7, -3,
-                    Map.of(AttributeRegistry.ICE_SPELL_POWER.get(),
-                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.25, AttributeModifier.Operation.MULTIPLY_BASE),
-                            AttributeRegistry.COOLDOWN_REDUCTION.get(),
-                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.20, AttributeModifier.Operation.MULTIPLY_BASE)
-                    )));
+    public static final RegistryObject<Item> ICE_DRAGON_PRIEST_STAFF = ITEMS.register("silver_dragon_priest_staff", IceDragonPriestStaff::new);
 
     // Lightning Dragon Priest Staff
-    public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_STAFF = ITEMS.register("thunderous_dragon_priest_staff",
-            () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC), 7, -3,
-                    Map.of(AttributeRegistry.LIGHTNING_SPELL_POWER.get(),
-                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.25, AttributeModifier.Operation.MULTIPLY_BASE),
-                            AttributeRegistry.COOLDOWN_REDUCTION.get(),
-                            new AttributeModifier(UUID.fromString("4c3d32f7-a3ce-413d-b797-85416731ebc8"), "Weapon modifier", 0.20, AttributeModifier.Operation.MULTIPLY_BASE)
-                    )));
+    public static final RegistryObject<Item> LIGHTNING_DRAGON_PRIEST_STAFF = ITEMS.register("thunderous_dragon_priest_staff", LightningDragonPriestStaff::new);
 
     // Wooden Dragon Priest Mask (Crafting item)
     public static final RegistryObject<Item> WOODEN_DRAGON_PRIEST_MASK = ITEMS.register("wooden_mask", () -> new WoodenDragonPriestMask(ItemPropertiesHelper.equipment()));
