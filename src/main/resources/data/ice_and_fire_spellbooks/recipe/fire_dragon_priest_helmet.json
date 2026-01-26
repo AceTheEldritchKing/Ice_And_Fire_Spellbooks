@@ -1,8 +1,7 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "srs",
-    "d d",
+    "drd",
     "d d"
   ],
   "key": {
@@ -11,13 +10,10 @@
     },
     "r": {
       "item": "irons_spellbooks:fire_rune"
-    },
-    "s": {
-      "tag": "ice_and_fire_spellbooks:fire_scales"
     }
   },
   "result": {
-    "item": "ice_and_fire_spellbooks:fire_dragon_priest_leggings",
+    "id": "ice_and_fire_spellbooks:fire_dragon_priest_helmet",
     "count": 1
   }
 }

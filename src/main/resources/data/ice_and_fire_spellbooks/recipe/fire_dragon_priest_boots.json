@@ -12,11 +12,11 @@
       "item": "irons_spellbooks:fire_rune"
     },
     "s": {
-      "tag": "ice_and_fire_spellbooks:fire_scales"
+      "tag": "iceandfire:scales/dragon/fire"
     }
   },
   "result": {
-    "item": "ice_and_fire_spellbooks:fire_dragon_priest_boots",
+    "id": "ice_and_fire_spellbooks:fire_dragon_priest_boots",
     "count": 1
   }
 }

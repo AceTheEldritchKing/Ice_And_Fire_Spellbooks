@@ -115,8 +115,8 @@ dependencies {
     // Ice and Fire
     implementation "curse.maven:architectury-api-419699:5786327"
     implementation "curse.maven:uranus-1010827:6979353"
-    implementation "curse.maven:jupiter-1072905:6843052"
-    implementation "curse.maven:ice-and-fire-ce-1040076:7210417"
+    implementation "curse.maven:jupiter-1072905:7506607"
+    implementation "curse.maven:ice-and-fire-ce-1040076:7524985"
 
     // Better Combat - Does not boot up in client for me, ugh
     // runtimeOnly "curse.maven:better-combat-by-daedelus-${better_combat_version}"

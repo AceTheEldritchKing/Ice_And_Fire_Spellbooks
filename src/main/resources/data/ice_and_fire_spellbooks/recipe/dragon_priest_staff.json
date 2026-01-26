@@ -7,7 +7,7 @@
   ],
   "key": {
     "d": {
-      "tag": "ice_and_fire_spellbooks:dragon_steel"
+      "tag": "iceandfire:dragon_steels"
     },
     "w": {
       "tag": "forge:bones/wither"
@@ -17,7 +17,7 @@
     }
   },
   "result": {
-    "item": "ice_and_fire_spellbooks:dragon_priest_staff",
+    "id": "ice_and_fire_spellbooks:dragon_priest_staff",
     "count": 1
   }
 }

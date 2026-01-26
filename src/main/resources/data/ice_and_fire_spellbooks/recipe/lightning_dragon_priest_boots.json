@@ -1,8 +1,8 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "drd",
-    "d d"
+    "s s",
+    "drd"
   ],
   "key": {
     "d": {
@@ -10,10 +10,13 @@
     },
     "r": {
       "item": "irons_spellbooks:lightning_rune"
+    },
+    "s": {
+      "tag": "iceandfire:scales/dragon/lightning"
     }
   },
   "result": {
-    "item": "ice_and_fire_spellbooks:lightning_dragon_priest_helmet",
+    "id": "ice_and_fire_spellbooks:lightning_dragon_priest_boots",
     "count": 1
   }
 }

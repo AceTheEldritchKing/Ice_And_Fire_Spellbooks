@@ -7,10 +7,10 @@
   ],
   "key": {
     "d": {
-      "tag": "ice_and_fire_spellbooks:dragon_steel"
+      "tag": "iceandfire:dragon_steels"
     },
     "s": {
-      "tag": "ice_and_fire_spellbooks:dragon_scales"
+      "tag": "iceandfire:scales/dragon"
     },
     "r": {
       "item": "irons_spellbooks:ruined_book"
@@ -20,7 +20,7 @@
     }
   },
   "result": {
-    "item": "ice_and_fire_spellbooks:dragonmancers_oathbook",
+    "id": "ice_and_fire_spellbooks:dragonmancers_oathbook",
     "count": 1
   }
 }
