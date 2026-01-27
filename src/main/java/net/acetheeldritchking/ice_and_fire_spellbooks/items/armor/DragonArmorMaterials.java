@@ -1,8 +1,8 @@
 package net.acetheeldritchking.ice_and_fire_spellbooks.items.armor;
 
-import com.github.alexthe666.iceandfire.item.IafItemRegistry;
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.iafenvoy.iceandfire.registry.IafItems;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.acetheeldritchking.ice_and_fire_spellbooks.config.ArmorValueConfig;
@@ -30,7 +30,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         });
     */
     // Fire Dragon Priest Regalia
-    FIRE_DRAGON_PRIEST("fire_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get())
+    FIRE_DRAGON_PRIEST("fire_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItems.DRAGONSTEEL_FIRE_INGOT.get())
     ),
     /*
     , Map.of(
@@ -39,7 +39,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
      */
 
     // Ice Dragon Priest Regalia
-    ICE_DRAGON_PRIEST("ice_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get())
+    ICE_DRAGON_PRIEST("ice_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItems.DRAGONSTEEL_ICE_INGOT.get())
     ),
     /*
     , Map.of(
@@ -48,7 +48,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
      */
 
     // Lightning Dragon Priest Regalia
-    LIGHTNING_DRAGON_PRIEST("lightning_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get())
+    LIGHTNING_DRAGON_PRIEST("lightning_dragon_priest", 39, ArmorValueConfig.dragonsteelArmorValue, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.1F, () -> Ingredient.of(IafItems.DRAGONSTEEL_LIGHTNING_INGOT.get())
     ),
     /*
     , Map.of(
@@ -57,15 +57,15 @@ public enum DragonArmorMaterials implements ArmorMaterial {
      */
 
     // Toornahkriin Dragon Mask (Fire)
-    TOORNAHKRIIN_MASK("toornahkriin", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_FIRE_INGOT.get())
+    TOORNAHKRIIN_MASK("toornahkriin", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItems.DRAGONSTEEL_FIRE_INGOT.get())
     ),
 
     // Fodaan Dragon Mask (Ice)
-    FODAAN_MASK("fodaan", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_ICE_INGOT.get())
+    FODAAN_MASK("fodaan", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItems.DRAGONSTEEL_ICE_INGOT.get())
     ),
 
     // Vulonqo Dragon Mask (Lightning)
-    VULONQO_MASK("vulonqo", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItemRegistry.DRAGONSTEEL_LIGHTNING_INGOT.get())
+    VULONQO_MASK("vulonqo", 25, ArmorValueConfig.dragonsteelMaskArmorValue, 15, SoundEvents.ARMOR_EQUIP_LEATHER, 2.0F, 0.1F, () -> Ingredient.of(IafItems.DRAGONSTEEL_LIGHTNING_INGOT.get())
     ),
 
     // Vulnilviir Dragon Mask (Ender)

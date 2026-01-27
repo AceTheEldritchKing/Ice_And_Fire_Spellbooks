@@ -159,11 +159,11 @@ dependencies {
     // JSON
     implementation "com.google.code.gson:gson:${gson_version}"
 
-    // Citadel
-    implementation fg.deobf("curse.maven:citadel-331936:5075402")
-
     // Ice and Fire
-    implementation fg.deobf("curse.maven:ice-and-fire-dragons-264231:5122408")
+    implementation fg.deobf("curse.maven:architectury-api-419699:5137938")
+    implementation fg.deobf("curse.maven:uranus-1010827:6914449")
+    implementation fg.deobf("curse.maven:jupiter-1072905:7506590")
+    implementation fg.deobf("curse.maven:ice-and-fire-ce-1040076:7533757")
 
     // Better Combat - Does not boot up in client for me, ugh
     // runtimeOnly fg.deobf("curse.maven:better-combat-by-daedelus-${better_combat_version}")

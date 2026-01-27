@@ -12,7 +12,7 @@
             "item": "irons_spellbooks:fire_rune"
         },
         "s": {
-            "tag": "ice_and_fire_spellbooks:fire_scales"
+            "tag": "iceandfire:scales/dragon/fire"
         }
     },
     "result": {

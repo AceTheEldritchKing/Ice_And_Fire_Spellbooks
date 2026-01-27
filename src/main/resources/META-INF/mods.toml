@@ -73,6 +73,6 @@ Adds compatibility with Iron's Spells and Spellbooks and Ice and Fire.
 [[dependencies.ice_and_fire_spellbooks]]
     modId="iceandfire"
     mandatory=true
-    versionRange="[2.1.13-1.20.1-beta-4,)"
+    versionRange="[1.0,)"
     ordering="AFTER"
     side="BOTH"
