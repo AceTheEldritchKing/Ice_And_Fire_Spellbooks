@@ -1,5 +1,5 @@
 {
-  "parent": "forge:item/default",
+  "parent": "neoforge:item/default",
   "base": {
     "parent": "ice_and_fire_spellbooks:item/dragon_priest_staff_3d"
   },

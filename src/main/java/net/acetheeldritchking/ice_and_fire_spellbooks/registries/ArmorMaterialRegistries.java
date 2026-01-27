@@ -74,7 +74,7 @@ public final class ArmorMaterialRegistries {
         return map;
     }
 
-    public static ItemAttributeModifiers makeAttributeMap(Holder<ArmorMaterial> material) {
+    public static ItemAttributeModifiers makeAttributeMap(Holder<ArmorMaterial> material, ArmorItem.Type type) {
         ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
         float toughness = material.value().toughness();
         float knockbackResistance = material.value().knockbackResistance();
@@ -93,71 +93,67 @@ public final class ArmorMaterialRegistries {
         double eldritchPowerMask = 0.15D;
         double reduceDamage = -0.20D;
 
-        for (ArmorItem.Type type : ArmorItem.Type.values())
-            if (type.hasTrims()) {
-                int protection = material.value().defense().get(type);
-                if (protection != 0) {
-                    builder.add(Attributes.ARMOR, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor_modifier"), protection, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.bySlot(type.getSlot()));
-                }
-            }
-
+        int protection = material.value().defense().get(type);
+        if (protection != 0) {
+            builder.add(Attributes.ARMOR, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor." + type.getName()), protection, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.bySlot(type.getSlot()));
+        }
         if (toughness != 0) {
-            builder.add(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor_toughness"), toughness, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ARMOR);
+            builder.add(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor." + type.getName()), toughness, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ARMOR);
         }
         if (knockbackResistance > 0) {
-            builder.add(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor_knockback_resistance"),
+            builder.add(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor_knockback_resistance." + type.getName()),
                     knockbackResistance, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ARMOR);
         }
-        builder.add(AttributeRegistry.SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "base_power"),
+        builder.add(AttributeRegistry.SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "base_power." + type.getName()),
                 spellPower, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.ARMOR);
         if (material == FIRE_DRAGON_PRIEST || material == ICE_DRAGON_PRIEST || material == LIGHTNING_DRAGON_PRIEST) {
-            builder.add(AttributeRegistry.MAX_MANA, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor_max_mana"),
+            builder.add(AttributeRegistry.MAX_MANA, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor_max_mana." + type.getName()),
                     maxMana, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ARMOR);
         }
         if (material == FIRE_DRAGON_PRIEST) {
-            builder.add(AttributeRegistry.FIRE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "fire_power"),
+            builder.add(AttributeRegistry.FIRE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "fire_power." + type.getName()),
                     firePower, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.ARMOR);
         }
         if (material == ICE_DRAGON_PRIEST) {
-            builder.add(AttributeRegistry.ICE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "ice_power"),
+            builder.add(AttributeRegistry.ICE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "ice_power." + type.getName()),
                     icePower, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.ARMOR);
         }
         if (material == LIGHTNING_DRAGON_PRIEST) {
-            builder.add(AttributeRegistry.LIGHTNING_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "lightning_power"),
+            builder.add(AttributeRegistry.LIGHTNING_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "lightning_power." + type.getName()),
                     lightningPower, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.ARMOR);
         }
 
         // Dragon Priest Masks //
         if (material == TOORNAHKRIIN_MASK || material == FODAAN_MASK || material == VULONQO_MASK || material == VULNILVIIR_MASK || material == VULSILAH_MASK) {
-            builder.add(AttributeRegistry.MAX_MANA, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor_max_mana"),
+            builder.add(AttributeRegistry.MAX_MANA, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "armor_max_mana." + type.getName()),
                     maxManaMask, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.ARMOR);
         }
         if (material == TOORNAHKRIIN_MASK || material == FODAAN_MASK || material == VULONQO_MASK || material == VULNILVIIR_MASK || material == VULSILAH_MASK) {
-            builder.add(AttributeRegistry.MANA_REGEN, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "mana_regen"),
+            builder.add(AttributeRegistry.MANA_REGEN, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "mana_regen." + type.getName()),
                     manaRegen, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), EquipmentSlotGroup.ARMOR);
         }
         if (material == TOORNAHKRIIN_MASK || material == FODAAN_MASK || material == VULONQO_MASK || material == VULNILVIIR_MASK || material == VULSILAH_MASK) {
-            builder.add(Attributes.ATTACK_DAMAGE, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "minus_damage"),
+            builder.add(Attributes.ATTACK_DAMAGE, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "minus_damage." + type.getName()),
                     reduceDamage, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL), EquipmentSlotGroup.ARMOR);
         }
         if (material == TOORNAHKRIIN_MASK) {
-            builder.add(AttributeRegistry.FIRE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "fire_power"),
+            builder.add(AttributeRegistry.FIRE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "fire_power." + type.getName()),
                     firePowerMask, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.ARMOR);
         }
         if (material == FODAAN_MASK) {
-            builder.add(AttributeRegistry.ICE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "ice_power"),
+            builder.add(AttributeRegistry.ICE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "ice_power." + type.getName()),
                     icePowerMask, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.ARMOR);
         }
         if (material == VULONQO_MASK) {
-            builder.add(AttributeRegistry.LIGHTNING_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "lightning_power"),
+            builder.add(AttributeRegistry.LIGHTNING_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "lightning_power." + type.getName()),
                     lightningPowerMask, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.ARMOR);
         }
         if (material == VULNILVIIR_MASK) {
-            builder.add(AttributeRegistry.ENDER_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "ender_power"),
+            builder.add(AttributeRegistry.ENDER_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "ender_power." + type.getName()),
                     enderPowerMask, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.ARMOR);
         }
         if (material == VULSILAH_MASK) {
-            builder.add(AttributeRegistry.ELDRITCH_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "eldritch_power"),
+            builder.add(AttributeRegistry.ELDRITCH_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "eldritch_power." + type.getName()),
                     eldritchPowerMask, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.ARMOR);
         }
 

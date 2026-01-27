@@ -16,10 +16,7 @@ public class ImbuableDragonChestplateArmorItem extends DragonArmorItem implement
 
     @Override
     public void initializeSpellContainer(ItemStack itemStack) {
-        if (itemStack == null) {
-            return;
-        }
-
+        if (itemStack == null) return;
         if (itemStack.getItem() instanceof DragonArmorItem armorItem && armorItem.getEquipmentSlot() == EquipmentSlot.CHEST) {
             if (!ISpellContainer.isSpellContainer(itemStack)) {
                 ISpellContainer spellContainer = ISpellContainer.create(1, true, true);

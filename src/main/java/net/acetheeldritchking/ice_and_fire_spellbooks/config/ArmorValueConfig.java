@@ -15,19 +15,17 @@ public class ArmorValueConfig {
     public static ArmorValues dragonsteelMaskArmorValue;
 
     static {
-        dragonsteelArmorValue = setupConfig(configBuilder, List.of(6, 9, 12, 7));
-        dragonsteelMaskArmorValue = setupConfig(configBuilder, List.of(5, 0, 0, 0));
-        SPEC = configBuilder.build();
-    }
-
-    private static ArmorValues setupConfig(ModConfigSpec.Builder builder, List<Integer> armorPoints) {
-        ArmorValues config = new ArmorValues(
-                builder.worldRestart()
-                        .comment("Defines armor values for Dragon Priest armor. Default is [6, 9, 12, 7]")
-                        .comment("[head, legs, chest, feet]")
-                        .defineList("dragonsteel_armor_values", () -> armorPoints, (p) -> true)
+        dragonsteelArmorValue = new ArmorValues(configBuilder.worldRestart()
+                .comment("Defines armor values for Dragon Priest armor. Default is [6, 9, 12, 7]")
+                .comment("[head, legs, chest, feet]")
+                .defineList("dragonsteel_armor_values", () -> List.of(6, 9, 12, 7), (p1) -> true)
         );
-        return config;
+        dragonsteelMaskArmorValue = new ArmorValues(configBuilder.worldRestart()
+                .comment("Defines mask values for Dragon Priest armor. Default is [5, 0, 0, 0]")
+                .comment("[head, legs, chest, feet]")
+                .defineList("dragonsteel_mask_armor_values", () -> List.of(5, 0, 0, 0), (p) -> true)
+        );
+        SPEC = configBuilder.build();
     }
 
     public record ArmorValues(ModConfigSpec.ConfigValue<List<? extends Integer>> armor) {

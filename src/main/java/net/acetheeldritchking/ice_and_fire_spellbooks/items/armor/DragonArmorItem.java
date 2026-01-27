@@ -26,16 +26,8 @@ public abstract class DragonArmorItem extends ArmorItem implements GeoItem {
     // Please never ask me to do armor configs ever again /j
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
-    private final Holder<ArmorMaterial> material;
-
     public DragonArmorItem(Holder<ArmorMaterial> material, Type type, Properties settings) {
-        super(material, type, settings.stacksTo(1).attributes(ArmorMaterialRegistries.makeAttributeMap(material)));
-        this.material = material;
-    }
-
-    @Override
-    public @NotNull Holder<ArmorMaterial> getMaterial() {
-        return this.material;
+        super(material, type, settings.stacksTo(1).attributes(ArmorMaterialRegistries.makeAttributeMap(material, type)));
     }
 
     @Override
@@ -61,12 +53,8 @@ public abstract class DragonArmorItem extends ArmorItem implements GeoItem {
 
             @Override
             public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
-                if (this.renderer == null) {
-                    this.renderer = DragonArmorItem.this.supplyRenderer();
-                }
-
+                if (this.renderer == null) this.renderer = DragonArmorItem.this.supplyRenderer();
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);
-
                 return this.renderer;
             }
         });
