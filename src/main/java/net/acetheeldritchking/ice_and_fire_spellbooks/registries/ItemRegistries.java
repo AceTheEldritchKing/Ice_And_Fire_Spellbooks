@@ -8,6 +8,9 @@ import io.redspace.ironsspellbooks.util.ItemPropertiesHelper;
 import net.acetheeldritchking.ice_and_fire_spellbooks.IceAndFireSpellbooks;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.armor.*;
 import net.acetheeldritchking.ice_and_fire_spellbooks.items.misc.WoodenDragonPriestMask;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.staffs.FireDragonPriestStaff;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.staffs.IceDragonPriestStaff;
+import net.acetheeldritchking.ice_and_fire_spellbooks.items.staffs.LightningDragonPriestStaff;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlotGroup;
@@ -38,22 +41,13 @@ public class ItemRegistries {
             .build())));
 
     // Fire Dragon Priest Staff
-    public static final DeferredHolder<Item, Item> FIRE_DRAGON_PRIEST_STAFF = ITEMS.register("crimson_dragon_priest_staff", () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC).attributes(ItemAttributeModifiers.builder()
-            .add(AttributeRegistry.FIRE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "weapon_modifier"), 0.25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND)
-            .add(AttributeRegistry.COOLDOWN_REDUCTION, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "weapon_modifier"), 0.20, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND)
-            .build())));
+    public static final DeferredHolder<Item, Item> FIRE_DRAGON_PRIEST_STAFF = ITEMS.register("crimson_dragon_priest_staff", FireDragonPriestStaff::new);
 
     // Ice Dragon Priest Staff
-    public static final DeferredHolder<Item, Item> ICE_DRAGON_PRIEST_STAFF = ITEMS.register("silver_dragon_priest_staff", () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC).attributes(ItemAttributeModifiers.builder()
-            .add(AttributeRegistry.ICE_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "weapon_modifier"), 0.25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND)
-            .add(AttributeRegistry.COOLDOWN_REDUCTION, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "weapon_modifier"), 0.20, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND)
-            .build())));
+    public static final DeferredHolder<Item, Item> ICE_DRAGON_PRIEST_STAFF = ITEMS.register("silver_dragon_priest_staff", IceDragonPriestStaff::new);
 
     // Lightning Dragon Priest Staff
-    public static final DeferredHolder<Item, Item> LIGHTNING_DRAGON_PRIEST_STAFF = ITEMS.register("thunderous_dragon_priest_staff", () -> new StaffItem(ItemPropertiesHelper.equipment().stacksTo(1).rarity(Rarity.EPIC).attributes(ItemAttributeModifiers.builder()
-            .add(AttributeRegistry.LIGHTNING_SPELL_POWER, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "weapon_modifier"), 0.25, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND)
-            .add(AttributeRegistry.COOLDOWN_REDUCTION, new AttributeModifier(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "weapon_modifier"), 0.20, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND)
-            .build())));
+    public static final DeferredHolder<Item, Item> LIGHTNING_DRAGON_PRIEST_STAFF = ITEMS.register("thunderous_dragon_priest_staff", LightningDragonPriestStaff::new);
 
     // Wooden Dragon Priest Mask (Crafting item)
     public static final DeferredHolder<Item, Item> WOODEN_DRAGON_PRIEST_MASK = ITEMS.register("wooden_mask", () -> new WoodenDragonPriestMask(ItemPropertiesHelper.equipment()));
