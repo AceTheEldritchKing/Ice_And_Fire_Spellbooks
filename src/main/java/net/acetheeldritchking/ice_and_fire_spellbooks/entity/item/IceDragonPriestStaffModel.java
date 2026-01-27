@@ -7,23 +7,22 @@ import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib.model.DefaultedItemGeoModel;
 
 public class IceDragonPriestStaffModel extends DefaultedItemGeoModel<IceDragonPriestStaff> {
-    public IceDragonPriestStaffModel()
-    {
-        super(new ResourceLocation(IceAndFireSpellbooks.MOD_ID, ""));
+    public IceDragonPriestStaffModel() {
+        super(ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, ""));
     }
 
     @Override
     public ResourceLocation getModelResource(IceDragonPriestStaff object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "geo/draconic_cryonic_staff.geo.json");
+        return ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "geo/draconic_cryonic_staff.geo.json");
     }
 
     @Override
     public ResourceLocation getTextureResource(IceDragonPriestStaff object) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "textures/item/staff/draconic_cryonic_staff.png");
+        return ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "textures/item/staff/draconic_cryonic_staff.png");
     }
 
     @Override
     public ResourceLocation getAnimationResource(IceDragonPriestStaff animatable) {
-        return new ResourceLocation(IceAndFireSpellbooks.MOD_ID, "animations/fire_dragon_priest.animation.json");
+        return ResourceLocation.fromNamespaceAndPath(IceAndFireSpellbooks.MOD_ID, "animations/fire_dragon_priest.animation.json");
     }
 }

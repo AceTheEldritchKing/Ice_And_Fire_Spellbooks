@@ -25,33 +25,27 @@ public class ServerEvents {
     }*/
 
     @SubscribeEvent
-    public static void onLivingDamageEvent(LivingHurtEvent event)
-    {
+    public static void onLivingDamageEvent(LivingHurtEvent event) {
         // Hopefully this should apply dragon damage reduction to the Dragon Priest armor
         String damageType = event.getSource().getMsgId();
         String DRAGON_FIRE = "dragon_fire";
         String DRAGON_ICE = "dragon_ice";
         String DRAGON_LIGHTNING = "dragon_lightning";
-        if(DRAGON_FIRE.equals(damageType) || DRAGON_ICE.equals(damageType) || DRAGON_LIGHTNING.equals(damageType))
-        {
+        if (DRAGON_FIRE.equals(damageType) || DRAGON_ICE.equals(damageType) || DRAGON_LIGHTNING.equals(damageType)) {
             float multiplier = 1.0F;
-            if (event.getEntity().getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof DragonArmorItem)
-            {
+            if (event.getEntity().getItemBySlot(EquipmentSlot.HEAD).getItem() instanceof DragonArmorItem) {
                 //System.out.println("Did head");
                 multiplier -= 0.1F;
             }
-            if (event.getEntity().getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DragonArmorItem)
-            {
+            if (event.getEntity().getItemBySlot(EquipmentSlot.CHEST).getItem() instanceof DragonArmorItem) {
                 //System.out.println("Did chest");
                 multiplier -= 0.3F;
             }
-            if (event.getEntity().getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof DragonArmorItem)
-            {
+            if (event.getEntity().getItemBySlot(EquipmentSlot.LEGS).getItem() instanceof DragonArmorItem) {
                 //System.out.println("Did legs");
                 multiplier -= 0.2F;
             }
-            if (event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() instanceof DragonArmorItem)
-            {
+            if (event.getEntity().getItemBySlot(EquipmentSlot.FEET).getItem() instanceof DragonArmorItem) {
                 //System.out.println("Did feet");
                 multiplier -= 0.1F;
             }

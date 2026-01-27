@@ -33,8 +33,7 @@ public class IFSStaffTier extends StaffTier implements IronsWeaponTier {
     float speed;
     AttributeContainer[] attributes;
 
-    public IFSStaffTier(float damage, float speed, AttributeContainer... attributes)
-    {
+    public IFSStaffTier(float damage, float speed, AttributeContainer... attributes) {
         super(damage, speed, attributes);
         this.damage = damage;
         this.speed = speed;

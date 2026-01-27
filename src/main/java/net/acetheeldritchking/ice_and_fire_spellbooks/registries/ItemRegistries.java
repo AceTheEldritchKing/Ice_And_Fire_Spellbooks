@@ -112,13 +112,11 @@ public class ItemRegistries {
     public static final RegistryObject<Item> VULSILAH_MASK_HELMET = ITEMS.register("vulsilah",
             () -> new VulsilahDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant()));
 
-    public static Collection<RegistryObject<Item>> getIFSItems()
-    {
+    public static Collection<RegistryObject<Item>> getIFSItems() {
         return ITEMS.getEntries();
     }
 
-    public static void register(IEventBus eventBus)
-    {
+    public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
 }

@@ -14,54 +14,27 @@ public class ArmorValueConfig {
     public static ArmorValues dragonsteelArmorValue;
     public static ArmorValues dragonsteelMaskArmorValue;
 
-    static
-    {
-        configBuilder.push("ArmorConfig");
-
-        dragonsteelArmorValue = setupConfig(configBuilder, "DragonPriestArmor", List.of(6, 9, 12, 6));
-        dragonsteelMaskArmorValue = setupConfig(configBuilder, "DragonPriestMasks", List.of(1, 1, 1, 5));
-
-        configBuilder.pop();
+    static {
+        dragonsteelArmorValue = new ArmorValues(configBuilder.worldRestart()
+                .comment("Defines armor values for Dragon Priest armor. Default is [6, 9, 12, 7]")
+                .comment("[head, legs, chest, feet]")
+                .defineList("dragonsteel_armor_values", () -> List.of(6, 9, 12, 7), (p1) -> true)
+        );
+        dragonsteelMaskArmorValue = new ArmorValues(configBuilder.worldRestart()
+                .comment("Defines mask values for Dragon Priest armor. Default is [5, 0, 0, 0]")
+                .comment("[head, legs, chest, feet]")
+                .defineList("dragonsteel_mask_armor_values", () -> List.of(5, 0, 0, 0), (p) -> true)
+        );
         SPEC = configBuilder.build();
     }
 
-    private static ArmorValues setupConfig(ForgeConfigSpec.Builder builder, String name, List<Integer> armorPoints)
-    {
-        builder.push(name);
-        var config = new ArmorValues(
-                builder.worldRestart()
-                        .comment("Defines armor values for Dragon Priest armor. Default is [6, 9, 12, 6]")
-                        .comment("[feet, legs, chest, head]")
-                        .defineList("dragonsteel_armor_values", () -> armorPoints, (p) -> true)
-        );
-        builder.pop();
-        return config;
-    }
-
-    private static ArmorValues setupDragonPriestMaskConfig(ForgeConfigSpec.Builder builder, List<Integer> armorPoints)
-    {
-        var config = new ArmorValues(
-                builder.worldRestart()
-                        .comment("Defines armor values for Dragon Priest Masks [0, 0, 0, 5]")
-                        .comment("[feet, legs, chest, head]")
-                        .defineList("dragonsteel_mask_armor_values", () -> armorPoints, (p) -> true)
-        );
-        return config;
-    }
-
-    public static record ArmorValues (ForgeConfigSpec.ConfigValue<List<? extends Integer>> armor)
-    {
+    public record ArmorValues(ForgeConfigSpec.ConfigValue<List<? extends Integer>> armor) {
         //
-        public int getProtectionValues(EquipmentSlot slot)
-        {
-            if (armor.get().size() != 4)
-            {
-                return armor.getDefault().get(slot.getIndex());
-            }
+        public int getProtectionValues(EquipmentSlot slot) {
+            if (this.armor.get().size() != 4)
+                return this.armor.getDefault().get(slot.getIndex());
             else
-            {
-                return armor.get().get(slot.getIndex());
-            }
+                return this.armor.get().get(slot.getIndex());
         }
     }
 

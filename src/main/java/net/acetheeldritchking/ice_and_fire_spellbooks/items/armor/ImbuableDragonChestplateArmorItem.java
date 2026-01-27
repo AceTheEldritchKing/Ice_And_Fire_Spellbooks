@@ -6,8 +6,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import software.bernie.geckolib.renderer.GeoArmorRenderer;
 
-public class ImbuableDragonChestplateArmorItem extends DragonArmorItem implements IPresetSpellContainer
-{
+public class ImbuableDragonChestplateArmorItem extends DragonArmorItem implements IPresetSpellContainer {
     public ImbuableDragonChestplateArmorItem(DragonArmorMaterials material, Type slot, Properties settings) {
         super(material, slot, settings);
     }

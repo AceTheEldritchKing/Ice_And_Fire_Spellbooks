@@ -18,8 +18,7 @@ public class CreativeTabRegistry {
     private static final DeferredRegister<CreativeModeTab> CREATIVE_MOD_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, IceAndFireSpellbooks.MOD_ID);
 
-    public static void register(IEventBus eventBus)
-    {
+    public static void register(IEventBus eventBus) {
         CREATIVE_MOD_TAB.register(eventBus);
     }
 

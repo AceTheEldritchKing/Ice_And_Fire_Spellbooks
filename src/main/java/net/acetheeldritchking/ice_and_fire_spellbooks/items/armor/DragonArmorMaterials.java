@@ -95,27 +95,24 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         this.toughness = pToughness;
         this.knockbackResistance = pKnockbackResistance;
         this.repairIngredient = new LazyLoadedValue<>(pRepairIngredient);
-        slotToAttributeMap = null;
+        this.slotToAttributeMap = null;
     }
 
     private EnumMap<EquipmentSlot, Multimap<Attribute, AttributeModifier>> slotToAttributeMap;
 
-    public EnumMap<EquipmentSlot, Multimap<Attribute, AttributeModifier>> getSlotToAttributeMap()
-    {
-        if (slotToAttributeMap == null)
-        {
-            slotToAttributeMap = makeSlotToAttributeMap();
+    public EnumMap<EquipmentSlot, Multimap<Attribute, AttributeModifier>> getSlotToAttributeMap() {
+        if (this.slotToAttributeMap == null) {
+            this.slotToAttributeMap = this.makeSlotToAttributeMap();
         }
-        return slotToAttributeMap;
+        return this.slotToAttributeMap;
     }
 
-    private EnumMap<EquipmentSlot, Multimap<Attribute, AttributeModifier>> makeSlotToAttributeMap()
-    {
+    private EnumMap<EquipmentSlot, Multimap<Attribute, AttributeModifier>> makeSlotToAttributeMap() {
         return Util.make(new EnumMap<>(EquipmentSlot.class), (p_266655_) -> {
-            p_266655_.put(EquipmentSlot.FEET, makeAttributeMap(EquipmentSlot.FEET));
-            p_266655_.put(EquipmentSlot.LEGS, makeAttributeMap(EquipmentSlot.LEGS));
-            p_266655_.put(EquipmentSlot.CHEST, makeAttributeMap(EquipmentSlot.CHEST));
-            p_266655_.put(EquipmentSlot.HEAD, makeAttributeMap(EquipmentSlot.HEAD));
+            p_266655_.put(EquipmentSlot.FEET, this.makeAttributeMap(EquipmentSlot.FEET));
+            p_266655_.put(EquipmentSlot.LEGS, this.makeAttributeMap(EquipmentSlot.LEGS));
+            p_266655_.put(EquipmentSlot.CHEST, this.makeAttributeMap(EquipmentSlot.CHEST));
+            p_266655_.put(EquipmentSlot.HEAD, this.makeAttributeMap(EquipmentSlot.HEAD));
         });
     }
 
@@ -125,8 +122,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
                     UUID.fromString("15C1FE6B-3596-412A-B6CF-4077CB37140F"),
                     UUID.fromString("82A575D1-366A-4BBD-91F8-25DB6B804F06")};
 
-    private Multimap<Attribute, AttributeModifier> makeAttributeMap(EquipmentSlot slot)
-    {
+    private Multimap<Attribute, AttributeModifier> makeAttributeMap(EquipmentSlot slot) {
         ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
         UUID uuid = ARMOR_ATTRIBUTE_UUID_PER_SLOT[slot.getIndex()];
         int protection = this.protectionFunctionForType.getProtectionValues(slot);
@@ -146,83 +142,67 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         double enderPowerMask = 0.15D;
         double eldritchPowerMask = 0.15D;
         double reduceDamage = -0.20D;
-        if (protection != 0)
-        {
+        if (protection != 0) {
             builder.put(Attributes.ARMOR, new AttributeModifier(uuid, "Armor modifier", protection, AttributeModifier.Operation.ADDITION));
         }
-        if (toughness != 0)
-        {
+        if (toughness != 0) {
             builder.put(Attributes.ARMOR_TOUGHNESS, new AttributeModifier(uuid, "Armor toughness", toughness, AttributeModifier.Operation.ADDITION));
         }
-        if (knockbackResistance > 0)
-        {
+        if (knockbackResistance > 0) {
             builder.put(Attributes.KNOCKBACK_RESISTANCE, new AttributeModifier(uuid, "Armor knockback resistance",
                     knockbackResistance, AttributeModifier.Operation.ADDITION));
         }
-        if (spellPower != 0)
-        {
+        if (spellPower != 0) {
             builder.put(AttributeRegistry.SPELL_POWER.get(), new AttributeModifier(uuid, "Base Power",
                     spellPower, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (maxMana != 0 && (DragonArmorMaterials.this == FIRE_DRAGON_PRIEST || DragonArmorMaterials.this == ICE_DRAGON_PRIEST || DragonArmorMaterials.this == LIGHTNING_DRAGON_PRIEST))
-        {
+        if (maxMana != 0 && (DragonArmorMaterials.this == FIRE_DRAGON_PRIEST || DragonArmorMaterials.this == ICE_DRAGON_PRIEST || DragonArmorMaterials.this == LIGHTNING_DRAGON_PRIEST)) {
             builder.put(AttributeRegistry.MAX_MANA.get(), new AttributeModifier(uuid, "Armor maxMana",
                     maxMana, AttributeModifier.Operation.ADDITION));
         }
-        if (firePower != 0 && DragonArmorMaterials.this == FIRE_DRAGON_PRIEST)
-        {
+        if (firePower != 0 && DragonArmorMaterials.this == FIRE_DRAGON_PRIEST) {
             builder.put(AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier(uuid, "Fire power",
                     firePower, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (icePower != 0 && DragonArmorMaterials.this == ICE_DRAGON_PRIEST)
-        {
+        if (icePower != 0 && DragonArmorMaterials.this == ICE_DRAGON_PRIEST) {
             builder.put(AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier(uuid, "Ice power",
                     icePower, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (lightningPower != 0 && DragonArmorMaterials.this == LIGHTNING_DRAGON_PRIEST)
-        {
+        if (lightningPower != 0 && DragonArmorMaterials.this == LIGHTNING_DRAGON_PRIEST) {
             builder.put(AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier(uuid, "Lightning power",
                     lightningPower, AttributeModifier.Operation.MULTIPLY_BASE));
         }
 
         // Dragon Priest Masks //
-        if (maxManaMask != 0 && (DragonArmorMaterials.this == TOORNAHKRIIN_MASK || DragonArmorMaterials.this == FODAAN_MASK || DragonArmorMaterials.this == VULONQO_MASK || DragonArmorMaterials.this == VULNILVIIR_MASK || DragonArmorMaterials.this == VULSILAH_MASK))
-        {
+        if (maxManaMask != 0 && (DragonArmorMaterials.this == TOORNAHKRIIN_MASK || DragonArmorMaterials.this == FODAAN_MASK || DragonArmorMaterials.this == VULONQO_MASK || DragonArmorMaterials.this == VULNILVIIR_MASK || DragonArmorMaterials.this == VULSILAH_MASK)) {
             builder.put(AttributeRegistry.MAX_MANA.get(), new AttributeModifier(uuid, "Armor maxMana",
                     maxManaMask, AttributeModifier.Operation.ADDITION));
         }
-        if (manaRegen != 0 && (DragonArmorMaterials.this == TOORNAHKRIIN_MASK || DragonArmorMaterials.this == FODAAN_MASK || DragonArmorMaterials.this == VULONQO_MASK || DragonArmorMaterials.this == VULNILVIIR_MASK || DragonArmorMaterials.this == VULSILAH_MASK))
-        {
+        if (manaRegen != 0 && (DragonArmorMaterials.this == TOORNAHKRIIN_MASK || DragonArmorMaterials.this == FODAAN_MASK || DragonArmorMaterials.this == VULONQO_MASK || DragonArmorMaterials.this == VULNILVIIR_MASK || DragonArmorMaterials.this == VULSILAH_MASK)) {
             builder.put(AttributeRegistry.MANA_REGEN.get(), new AttributeModifier(uuid, "Mana Regen",
                     manaRegen, AttributeModifier.Operation.MULTIPLY_TOTAL));
         }
-        if (reduceDamage != 0 && (DragonArmorMaterials.this == TOORNAHKRIIN_MASK || DragonArmorMaterials.this == FODAAN_MASK || DragonArmorMaterials.this == VULONQO_MASK || DragonArmorMaterials.this == VULNILVIIR_MASK || DragonArmorMaterials.this == VULSILAH_MASK))
-        {
+        if (reduceDamage != 0 && (DragonArmorMaterials.this == TOORNAHKRIIN_MASK || DragonArmorMaterials.this == FODAAN_MASK || DragonArmorMaterials.this == VULONQO_MASK || DragonArmorMaterials.this == VULNILVIIR_MASK || DragonArmorMaterials.this == VULSILAH_MASK)) {
             builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(uuid, "minus_damage",
                     reduceDamage, AttributeModifier.Operation.MULTIPLY_TOTAL));
         }
-        if (firePowerMask != 0 && DragonArmorMaterials.this == TOORNAHKRIIN_MASK)
-        {
+        if (firePowerMask != 0 && DragonArmorMaterials.this == TOORNAHKRIIN_MASK) {
             builder.put(AttributeRegistry.FIRE_SPELL_POWER.get(), new AttributeModifier(uuid, "Fire power",
                     firePowerMask, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (icePowerMask != 0 && DragonArmorMaterials.this == FODAAN_MASK)
-        {
+        if (icePowerMask != 0 && DragonArmorMaterials.this == FODAAN_MASK) {
             builder.put(AttributeRegistry.ICE_SPELL_POWER.get(), new AttributeModifier(uuid, "Ice power",
                     icePowerMask, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (lightningPowerMask != 0 && DragonArmorMaterials.this == VULONQO_MASK)
-        {
+        if (lightningPowerMask != 0 && DragonArmorMaterials.this == VULONQO_MASK) {
             builder.put(AttributeRegistry.LIGHTNING_SPELL_POWER.get(), new AttributeModifier(uuid, "Lightning power",
                     lightningPowerMask, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (enderPowerMask != 0 && DragonArmorMaterials.this == VULNILVIIR_MASK)
-        {
+        if (enderPowerMask != 0 && DragonArmorMaterials.this == VULNILVIIR_MASK) {
             builder.put(AttributeRegistry.ENDER_SPELL_POWER.get(), new AttributeModifier(uuid, "Ender power",
                     enderPowerMask, AttributeModifier.Operation.MULTIPLY_BASE));
         }
-        if (eldritchPowerMask != 0 && DragonArmorMaterials.this == VULSILAH_MASK)
-        {
+        if (eldritchPowerMask != 0 && DragonArmorMaterials.this == VULSILAH_MASK) {
             builder.put(AttributeRegistry.ELDRITCH_SPELL_POWER.get(), new AttributeModifier(uuid, "Eldritch power",
                     eldritchPowerMask, AttributeModifier.Operation.MULTIPLY_BASE));
         }
@@ -230,8 +210,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         return builder.build();
     }
 
-    static public EnumMap<ArmorItem.Type, Integer> makeArmorMap(int helmet, int chestplate, int leggings, int boots)
-    {
+    static public EnumMap<ArmorItem.Type, Integer> makeArmorMap(int helmet, int chestplate, int leggings, int boots) {
         return Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266655_) -> {
             p_266655_.put(ArmorItem.Type.BOOTS, boots);
             p_266655_.put(ArmorItem.Type.LEGGINGS, leggings);
@@ -244,7 +223,7 @@ public enum DragonArmorMaterials implements ArmorMaterial {
         return HEALTH_PER_SLOT[pSlot.getIndex()] * this.durabilityMultiplier;
     }
 
-    private static EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE =
+    private static final EnumMap<ArmorItem.Type, Integer> HEALTH_FUNCTION_FOR_TYPE =
             Util.make(new EnumMap<>(ArmorItem.Type.class), (p_266653_) -> {
                 p_266653_.put(ArmorItem.Type.BOOTS, 13);
                 p_266653_.put(ArmorItem.Type.LEGGINGS, 15);
@@ -259,9 +238,9 @@ public enum DragonArmorMaterials implements ArmorMaterial {
 
     @Override
     public int getDefenseForType(ArmorItem.Type type) {
-        try{
+        try {
             return ArmorValueConfig.dragonsteelArmorValue.armor().get().get(type.getSlot().getIndex());
-        }catch (Exception e){
+        } catch (Exception e) {
             return -1;
         }
     }

@@ -38,19 +38,15 @@ public abstract class DragonArmorItem extends ArmorItem implements GeoItem {
         this.material = material;
     }
 
-    public DragonArmorMaterials getMaterial()
-    {
+    public DragonArmorMaterials getMaterial() {
         return this.material;
     }
 
     @Override
     public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot pEquipmentSlot) {
-        if (pEquipmentSlot == this.type.getSlot())
-        {
+        if (pEquipmentSlot == this.type.getSlot()) {
             return this.material.getSlotToAttributeMap().get(pEquipmentSlot);
-        }
-        else
-        {
+        } else {
             return ImmutableMultimap.of();
         }
     }
@@ -66,8 +62,7 @@ public abstract class DragonArmorItem extends ArmorItem implements GeoItem {
     }
 
     @Override
-    public AnimatableInstanceCache getAnimatableInstanceCache()
-    {
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
         return this.cache;
     }
 
@@ -77,11 +72,9 @@ public abstract class DragonArmorItem extends ArmorItem implements GeoItem {
             private GeoArmorRenderer<?> renderer;
 
             @Override
-            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original)
-            {
-                if (this.renderer == null)
-                {
-                    this.renderer = supplyRenderer();
+            public @NotNull HumanoidModel<?> getHumanoidArmorModel(LivingEntity livingEntity, ItemStack itemStack, EquipmentSlot equipmentSlot, HumanoidModel<?> original) {
+                if (this.renderer == null) {
+                    this.renderer = DragonArmorItem.this.supplyRenderer();
                 }
 
                 this.renderer.prepForRender(livingEntity, itemStack, equipmentSlot, original);

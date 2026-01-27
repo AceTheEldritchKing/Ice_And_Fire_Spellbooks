@@ -16,12 +16,10 @@ public class VulsilahDragonPriestMaskItem extends DragonArmorItem implements IPr
 
     @Override
     public void initializeSpellContainer(ItemStack itemStack) {
-        if (itemStack == null)
-        {
+        if (itemStack == null) {
             return;
         }
-        if (!ISpellContainer.isSpellContainer(itemStack))
-        {
+        if (!ISpellContainer.isSpellContainer(itemStack)) {
             var spellContainer = ISpellContainer.create(2, true, true);
             spellContainer.save(itemStack);
         }

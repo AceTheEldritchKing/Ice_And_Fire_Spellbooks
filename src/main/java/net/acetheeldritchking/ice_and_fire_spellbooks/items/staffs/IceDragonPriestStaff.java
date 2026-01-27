@@ -25,13 +25,14 @@ public class IceDragonPriestStaff extends StaffItem implements GeoItem {
     public void initializeClient(Consumer<IClientItemExtensions> consumer) {
         consumer.accept(new IClientItemExtensions() {
             private IceDragonPriestStaffRenderer renderer = null;
+
             // Don't instantiate until ready. This prevents race conditions breaking things
             @Override
             public BlockEntityWithoutLevelRenderer getCustomRenderer() {
                 if (this.renderer == null)
                     this.renderer = new IceDragonPriestStaffRenderer();
 
-                return renderer;
+                return this.renderer;
             }
         });
     }
@@ -43,6 +44,6 @@ public class IceDragonPriestStaff extends StaffItem implements GeoItem {
 
     @Override
     public AnimatableInstanceCache getAnimatableInstanceCache() {
-        return cache;
+        return this.cache;
     }
 }

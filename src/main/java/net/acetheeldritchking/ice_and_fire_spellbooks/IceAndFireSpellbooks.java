@@ -23,13 +23,11 @@ import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(IceAndFireSpellbooks.MOD_ID)
-public class IceAndFireSpellbooks
-{
+public class IceAndFireSpellbooks {
     public static final String MOD_ID = "ice_and_fire_spellbooks";
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public IceAndFireSpellbooks()
-    {
+    public IceAndFireSpellbooks() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         // Event handlers
@@ -50,18 +48,15 @@ public class IceAndFireSpellbooks
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         // nada
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
+        public static void onClientSetup(FMLClientSetupEvent event) {
             // curios :3c
             event.enqueueWork(() -> {
                 ItemRegistries.getIFSItems().stream().filter(item -> item.get() instanceof SpellBook).forEach((item) -> CuriosRendererRegistry.register(item.get(), SpellBookCurioRenderer::new));
