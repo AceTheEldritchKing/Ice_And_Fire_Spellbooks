@@ -5,7 +5,7 @@ plugins {
     id 'idea'
 }
 
-version = '2.3.1-1.21.1'
+version = '2.3.2-1.21.1'
 group = "net.acetheeldritchking.${mod_id}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = mod_id
 
