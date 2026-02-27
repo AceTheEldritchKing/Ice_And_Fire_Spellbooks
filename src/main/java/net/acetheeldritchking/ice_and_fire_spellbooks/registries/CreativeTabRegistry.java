@@ -40,11 +40,11 @@ public class CreativeTabRegistry {
                         pOutput.accept(ItemRegistries.FIRE_DRAGON_PRIEST_STAFF.get());
                         pOutput.accept(ItemRegistries.ICE_DRAGON_PRIEST_STAFF.get());
                         pOutput.accept(ItemRegistries.LIGHTNING_DRAGON_PRIEST_STAFF.get());
-                        pOutput.accept(ItemRegistries.TOORNAHKRIIN_MASK_HELMET.get());
-                        pOutput.accept(ItemRegistries.FODAAN_MASK_HELMET.get());
-                        pOutput.accept(ItemRegistries.VULONQO_MASK_HELMET.get());
-                        pOutput.accept(ItemRegistries.VULNILVIIR_MASK_HELMET.get());
-                        pOutput.accept(ItemRegistries.VULSILAH_MASK_HELMET.get());
+                        pOutput.accept(ItemRegistries.FIRE_MASK_HELMET.get());
+                        pOutput.accept(ItemRegistries.ICE_MASK_HELMET.get());
+                        pOutput.accept(ItemRegistries.LIGHTNING_MASK_HELMET.get());
+                        pOutput.accept(ItemRegistries.ENDER_MASK_HELMET.get());
+                        pOutput.accept(ItemRegistries.ELDRITCH_MASK_HELMET.get());
                         pOutput.accept(ItemRegistries.WOODEN_DRAGON_PRIEST_MASK.get());
                     }))
                     .withTabsBefore(CreativeModeTabs.SPAWN_EGGS)

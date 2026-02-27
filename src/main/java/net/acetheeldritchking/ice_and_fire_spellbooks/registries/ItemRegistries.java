@@ -41,13 +41,13 @@ public class ItemRegistries {
             .build())));
 
     // Fire Dragon Priest Staff
-    public static final DeferredHolder<Item, Item> FIRE_DRAGON_PRIEST_STAFF = ITEMS.register("crimson_dragon_priest_staff", FireDragonPriestStaff::new);
+    public static final DeferredHolder<Item, Item> FIRE_DRAGON_PRIEST_STAFF = ITEMS.register("draconic_inferno_staff", FireDragonPriestStaff::new);
 
     // Ice Dragon Priest Staff
-    public static final DeferredHolder<Item, Item> ICE_DRAGON_PRIEST_STAFF = ITEMS.register("silver_dragon_priest_staff", IceDragonPriestStaff::new);
+    public static final DeferredHolder<Item, Item> ICE_DRAGON_PRIEST_STAFF = ITEMS.register("draconic_cryonic_staff", IceDragonPriestStaff::new);
 
     // Lightning Dragon Priest Staff
-    public static final DeferredHolder<Item, Item> LIGHTNING_DRAGON_PRIEST_STAFF = ITEMS.register("thunderous_dragon_priest_staff", LightningDragonPriestStaff::new);
+    public static final DeferredHolder<Item, Item> LIGHTNING_DRAGON_PRIEST_STAFF = ITEMS.register("draconic_tempest_staff", LightningDragonPriestStaff::new);
 
     // Wooden Dragon Priest Mask (Crafting item)
     public static final DeferredHolder<Item, Item> WOODEN_DRAGON_PRIEST_MASK = ITEMS.register("wooden_mask", () -> new WoodenDragonPriestMask(ItemPropertiesHelper.equipment()));
@@ -87,24 +87,24 @@ public class ItemRegistries {
             () -> new LightningDragonPriestArmorItem(ArmorItem.Type.BOOTS, ItemPropertiesHelper.equipment().fireResistant().durability(507)));
 
     // Toornahkriin Dragon Mask (Fire)
-    public static final DeferredHolder<Item, Item> TOORNAHKRIIN_MASK_HELMET = ITEMS.register("toornahkriin",
-            () -> new ToornahkriinDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275)));
+    public static final DeferredHolder<Item, Item> FIRE_MASK_HELMET  = ITEMS.register("fire_dragon_priest_mask",
+            () -> new FireDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275).rarity(Rarity.EPIC)));
 
     // Fodaan Dragon Mask (Ice)
-    public static final DeferredHolder<Item, Item> FODAAN_MASK_HELMET = ITEMS.register("fodaan",
-            () -> new FodaanDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275)));
+    public static final DeferredHolder<Item, Item> ICE_MASK_HELMET = ITEMS.register("ice_dragon_priest_mask",
+            () -> new IceDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275).rarity(Rarity.EPIC)));
 
     // Vulonqo Dragon Mask (Lightning)
-    public static final DeferredHolder<Item, Item> VULONQO_MASK_HELMET = ITEMS.register("vulonqo",
-            () -> new VulonqoDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275)));
+    public static final DeferredHolder<Item, Item> LIGHTNING_MASK_HELMET = ITEMS.register("lightning_dragon_priest_mask",
+            () -> new LightningDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275).rarity(Rarity.EPIC)));
 
     // Vulnilviir Dragon Mask (Ender)
-    public static final DeferredHolder<Item, Item> VULNILVIIR_MASK_HELMET = ITEMS.register("vulnilviir",
-            () -> new VulnilviirDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275)));
+    public static final DeferredHolder<Item, Item> ENDER_MASK_HELMET = ITEMS.register("ender_dragon_priest_mask",
+            () -> new EnderDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275).rarity(Rarity.EPIC)));
 
     // Vulsilah Dragon Mask (Eldritch)
-    public static final DeferredHolder<Item, Item> VULSILAH_MASK_HELMET = ITEMS.register("vulsilah",
-            () -> new VulsilahDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275)));
+    public static final DeferredHolder<Item, Item> ELDRITCH_MASK_HELMET = ITEMS.register("eldritch_dragon_priest_mask",
+            () -> new EldritchDragonPriestMaskItem(ArmorItem.Type.HELMET, ItemPropertiesHelper.equipment().fireResistant().durability(275).rarity(Rarity.EPIC)));
 
     public static Collection<DeferredHolder<Item, ? extends Item>> getIFSItems() {
         return ITEMS.getEntries();

@@ -118,6 +118,9 @@ dependencies {
     implementation "curse.maven:jupiter-1072905:7506607"
     implementation "curse.maven:ice-and-fire-ce-1040076:7524985"
 
+    // ASU
+    implementation "curse.maven:aces-spell-utils-1299492:7586646"
+
     // Better Combat - Does not boot up in client for me, ugh
     // runtimeOnly "curse.maven:better-combat-by-daedelus-${better_combat_version}"
     // runtimeOnly "curse.maven:cloth-config-348521:4633416"
